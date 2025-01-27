@@ -21,7 +21,16 @@ import trendingAbuDhabi from "/src/assets/images/trendingAbuDhabi.png"
 import trendingSharjah from "/src/assets/images/trendingSharjah.png"
 import trendingIstanbol from "/src/assets/images/trendingIstangbol.png"
 import trendingParis from "/src/assets/images/trendingParis.png"
-
+import TurkeyOne from "../../../../assets/images/istangbul.jpg"
+import TurkeyTwo from "../../../../assets/images/istangbol-city-two.jpg"
+import TurkeyThree from "../../../../assets/images/istangbol-city-three.jpg"
+import TurkeyFour from "../../../../assets/images/istangbol-city-four.jpg"
+import TurkeyFive from "../../../../assets/images/istangbol-city-five.jpg"
+import TurkeySix from "../../../../assets/images/istangbol-city-six.jpg"
+import TurkeySeven from "../../../../assets/images/istangbol-city-seven.jpg"
+import TurkeyEight from "../../../../assets/images/istangbol-city-eight.jpg"
+import TurkeyNine from "../../../../assets/images/istangbol-city-ten.jpg"
+import TurkeyTen from "../../../../assets/images/istangbol-city-nine.jpg"
 
 const HeroSection = () => {
   const [city, setCity] = useState("");
@@ -62,6 +71,18 @@ const HeroSection = () => {
   // ];
 
 
+  const cities = [
+    { name: "Istanbul", properties: "4256 properties", img: { TurkeyOne } },
+    { name: "Cappadocia", properties: "685 properties", img: "https://example.com/cappadocia.jpg" },
+    { name: "Antalya", properties: "604 properties", img: "https://example.com/antalya.jpg" },
+    { name: "Göreme", properties: "206 properties", img: "https://example.com/goreme.jpg" },
+    { name: "Ankara", properties: "296 properties", img: "https://example.com/ankara.jpg" },
+    { name: "Bodrum", properties: "544 properties", img: "https://example.com/bodrum.jpg" },
+    { name: "İzmir", properties: "272 properties", img: "https://example.com/izmir.jpg" },
+    { name: "Trabzon", properties: "835 properties", img: "https://example.com/trabzon.jpg" },
+    { name: "Bursa", properties: "252 properties", img: "https://example.com/bursa.jpg" },
+    { name: "Alanya", properties: "953 properties", img: "https://example.com/alanya.jpg" }
+  ];
 
 
 
@@ -267,6 +288,7 @@ const HeroSection = () => {
 
       </Typography>
 
+
     </Box>
 
 
@@ -275,10 +297,6 @@ const HeroSection = () => {
     <Box className='container d-none d-lg-block d-md-block mt-5'>
       <Typography className='fw-bold'
       >Trending destinations
-
-
-
-
         <Box className=" "
         >
           <Box className="row " >
@@ -297,12 +315,12 @@ const HeroSection = () => {
 
             </Box>
 
-            <Box  style={{ width: "310px" }} className='col-lg-4 col-md-4' >
+            <Box style={{ width: "310px" }} className='col-lg-4 col-md-4' >
               <img className='img-fluid  rounded-3' src={trendingIstanbol} alt="" />
 
             </Box>
 
-            <Box  style={{ width: "310px" }} className='col-lg-4 col-md-4' >
+            <Box style={{ width: "310px" }} className='col-lg-4 col-md-4' >
               <img className='img-fluid  rounded-3' src={trendingParis} alt="" />
 
             </Box>
@@ -314,6 +332,101 @@ const HeroSection = () => {
       </Typography>
     </Box>
 
+
+
+
+{/* 
+    <Box className="container mt-5">
+      <Typography className="fw-bold fs-4">Explore Turkey</Typography>
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 2,
+          padding: '15px',
+          alignItems: 'center',
+          overflowX: 'auto',
+          scrollSnapType: 'x mandatory',
+          '& > *': { scrollSnapAlign: 'center' },
+          '::-webkit-scrollbar': { display: 'none' },
+        }}
+      >
+        {cities.map((city, index) => (
+          <Box key={index} style={{ textAlign: 'center', width: '200px' }}>
+            <img
+              src={city.img}
+              alt={city.name}
+              style={{ width: '100%', borderRadius: '8px' }}
+            />
+            <Typography className="fw-bold">{city.name}</Typography>
+            <Typography>{city.properties}</Typography>
+          </Box>
+        ))}
+      </Box>
+    </Box> */}
+
+
+
+
+
+
+    <Box className='container' >
+  <Typography>
+    Explore Turkey
+  </Typography>
+
+  <Box
+    sx={{
+      display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'flex' }, // Show carousel only on small screens
+      gap: 2,
+      padding: '10px',
+      paddingBottom: '15px',
+      paddingTop: '15px',
+      alignItems: 'center',
+      overflowX: 'auto', // Enables horizontal scrolling
+      width: '100%',
+      // backgroundColor: '#0D6EFD',
+      scrollSnapType: 'x mandatory',
+      '& > *': {
+        scrollSnapAlign: 'center',
+        display: 'flex', // Ensure items are in line for horizontal scrolling
+        marginRight: 0, // Spacing between items
+      },
+      '::-webkit-scrollbar': { display: 'none' }, // Hide scrollbar
+    }}
+  >
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 2,
+        flexWrap: 'nowrap', // Prevents wrapping
+        overflowX: 'auto', // Enables scrolling
+        width: '100%',
+      }}
+    >
+      {cities.slice(0, 10).map((city) => (
+        <div
+          style={{
+            border: '1px solid #ddd',
+            padding: 10,
+            margin: 10,
+            borderRadius: 8,
+            textAlign: 'center',
+            flex: '0 0 auto', // Prevent items from growing or shrinking
+          }}
+          key={city.name}
+        >
+          <img
+            src={city.img}
+            alt={city.name}
+            style={{ width: '100%', maxWidth: 150, minWidth: 150, borderRadius: 8 }}
+          />
+          <h3>{city.name}</h3>
+          <p>{city.properties}</p>
+        </div>
+      ))}
+    </Box>
+  </Box>
+</Box>
 
 
   </>
