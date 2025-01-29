@@ -43,6 +43,12 @@ import Deal10 from "../../../../assets/images/Deal-1.jpg"
 import Deal11 from "../../../../assets/images/Deal-2.jpg"
 import Deal12 from "../../../../assets/images/Deal-3.jpg"
 import Deal13 from "../../../../assets/images/Deal-4.jpg"
+import Destination1 from "../../../../assets/images/nexttrip-1st.png"
+import Destination2 from "../../../../assets/images/nexttrip-1.webp"
+import Destination3 from "../../../../assets/images/nexttrip-2.webp"
+import Destination4 from "../../../../assets/images/nexttrip-3.webp"
+import Destination5 from "../../../../assets/images/nexttrip-4.webp"
+import Genius from "../../../../assets/images/Genius.png"
 
 
 const HeroSection = () => {
@@ -243,32 +249,30 @@ const HeroSection = () => {
 
   const destinations = [
     {
-      image: "los-angeles-hotel.jpg",
-      title: "5 of the best hotels in Los Angeles",
-      subtitle: "From Hollywood to Beverly Hills discover 5 of the best hotels in Los Angeles for your stay",
+      image:Destination1,
     },
     {
-      image: "orlando-hotels.jpg",
+      image: Destination2,
       title: "The 6 best Orlando hotels for families",
       subtitle: "Discover the best Orlando hotels for families for your vacation.",
     },
     {
-      image: "ski-towns.jpg",
+      image: Destination3,
       title: "5 best ski towns around the world",
       subtitle: "Discover a winter wonderland in these charming ski destinations",
     },
     {
-      image: "thanksgiving-vacation-homes.jpg",
+      image: Destination4,
       title: "5 vacation homes for a Thanksgiving getaway",
       subtitle: "Enjoy Thanksgiving dinner at these vacation homes.",
     },
     {
-      image: "bangkok-rooftop-bars.jpg",
+      image: Destination5,
       title: "6 incredible Bangkok rooftop bars",
       subtitle: "Amazing city views, cocktails, and world-class cuisine.",
     },
   ];
-  
+
 
 
 
@@ -759,7 +763,129 @@ const HeroSection = () => {
     </Box>
 
 
+    <Box className="container">
+  <Typography className="fs-5 fw-bold mt-4">
+    Get inspiration for your next trip
+  </Typography>
 
+  <Box
+    sx={{
+      display: "flex",
+      gap: 2,
+      padding: "0px",
+      paddingBottom: "15px",
+      paddingTop: "10px",
+      alignItems: "center",
+      overflowX: "auto",
+      width: "100%",
+      scrollSnapType: "x mandatory",
+      "& > *": {
+        scrollSnapAlign: "center",
+      },
+      "::-webkit-scrollbar": { display: "none" }, // Hide scrollbar
+    }}
+  >
+    <Box
+      sx={{
+        display: "flex",
+        gap: 2,
+        flexWrap: "nowrap",
+        overflowX: "auto",
+        width: "100%",
+        "::-webkit-scrollbar": { display: "none" },
+      }}
+    >
+      {destinations.map((destination, index) => (
+        <Box
+          key={index}
+          className={`col-lg-${index === 0 ? "6" : "3"} col-md-${index === 0 ? "6" : "3"} col-${index === 0 ? "12" : "8"}`} // Large screen pe first item 6 col, baqi 3 col, small screen pe full width
+          sx={{
+            padding: 0,
+            margin: 0,
+            borderRadius: 8,
+            textAlign: "center",
+            flex: "0 0 auto",
+            border: "none",
+          }}
+        >
+          <img
+            className="img-fluid  w-100"
+            src={destination.image}
+            alt={destination.title}
+            style={{
+              // height: index === 0 ? "300px" : "180px",
+              objectFit: "cover",
+              borderRadius: "8px",
+            }}
+          />
+          <Box>
+            <Typography
+              className="fs-6 fw-bold text-start mt-2"
+              style={{ fontSize: "14px" }}
+            >
+              {destination.title}
+            </Typography>
+            <Typography
+              className="text-start"
+              style={{ fontSize: "12px", color: "#555" }}
+            >
+              {destination.subtitle}
+            </Typography>
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  </Box>
+</Box>
+
+
+    <Box className='container mt-5'>
+      <Typography className='fs-4 fw-bold '>
+        Offers
+
+      </Typography>
+        <Box className="container mt-3 border border-1 rounded-3">
+          <Box className='row' >
+
+            <Card className='col-lg-12 col-md-12 col-sm-12  '>
+              <Box className='d-flex justify-content-between  pt-2 pb-1 '>
+
+
+                <Box>
+                  <Typography className='fs-6 fw-bold'>
+                  Sign in, save money
+
+                  </Typography>
+                  <Typography  fontSize={12} className=' fw-light'>
+                  Save 10% or more at participating properties – just look for the blue Genius label
+
+
+                  </Typography>
+                  <Box className='mt-2'>
+                 
+          <button style={{fontSize:"12px"}} class="btn bg-primary py-1 px-2  text-white rounded-1 outline-primary me-2 fw-medium " >Sign in</button>
+          <button style={{fontSize:"12px"}} class="btn bg-white py-1 px-2  text-primary rounded-1 outline-primary  fw-medium" >Register</button>
+
+
+
+                  </Box>
+
+
+                </Box>
+
+                <Box className='text-center d-flex flex-column justify-content-center'><img width={75} src={Genius} alt="" /></Box>
+
+              </Box>
+
+
+
+
+            </Card>
+
+          </Box>
+        </Box>
+
+        </Box>
 
 
   </>
