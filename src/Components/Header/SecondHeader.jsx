@@ -75,6 +75,10 @@ const SecondHeader = () => {
       </nav>
 
       {/* Carousel for Small Screens (Horizontal Scrolling) */}
+
+
+
+     
       <Box
         sx={{
           display: { xs: 'flex', sm: 'none', md:"none",lg:"none" }, // Show carousel only on small screens
