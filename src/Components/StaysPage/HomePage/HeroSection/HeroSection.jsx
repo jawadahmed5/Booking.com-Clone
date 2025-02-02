@@ -967,7 +967,7 @@ const HeroSection = () => {
     </Card>
 
 
-{/* 
+
 <Box className='container mt-5'>
 <Typography className='fw-bold fs-4'>
 Popular with travelers from Pakistan
@@ -1145,7 +1145,7 @@ Popular with travelers from Pakistan
 
 </Box>
 
-</Box> */}
+</Box>
 
 
   
