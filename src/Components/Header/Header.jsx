@@ -2,6 +2,7 @@ import React from 'react'
 import country from "../../assets/images/flag.png"
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import SecondHeader from './SecondHeader';
+import { Link } from 'react-router';
 
 
 const Header = () => {
@@ -34,9 +35,12 @@ const Header = () => {
         
 
           {/* <input class="form-control " type="search" placeholder="Search" aria-label="Search"> */}
+          <Link to="/Register" >
           <button style={{fontSize:"12px"}} class="btn bg-white py-1 px-2  text-primary rounded-1 outline-primary me-2 fw-medium " >Register</button>
+          </Link>
+          <Link to="/Signin" >
           <button style={{fontSize:"12px"}} class="btn bg-white py-1 px-2  text-primary rounded-1 outline-primary  fw-medium" >Sign in</button>
-        
+          </Link>
       </div>
      
       </div>
