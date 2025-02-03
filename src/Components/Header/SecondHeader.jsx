@@ -5,6 +5,7 @@ import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFi
 import AttractionsOutlinedIcon from '@mui/icons-material/AttractionsOutlined';
 import LocalTaxiOutlinedIcon from '@mui/icons-material/LocalTaxiOutlined';
 import { Box } from '@mui/material';
+import { Link } from 'react-router';
 
 const SecondHeader = () => {
   return (
@@ -18,9 +19,9 @@ const SecondHeader = () => {
             <li className="nav-item  ">
             <div style={{cursor:"pointer"}} className="nav-link active   py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
         <KingBedOutlinedIcon />
-        <a style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
+        <Link to={} style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
            Stays
-        </a>
+           </Link>
         </div>
 </li>
 

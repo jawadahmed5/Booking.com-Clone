@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SecondHeader from '../Header/SecondHeader'
-import { Accordion, AccordionDetails, AccordionSummary, Box, Checkbox, FormControlLabel, List, ListItem, Typography } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Card, CardContent, CardMedia, Checkbox, FormControlLabel, Grid, List, ListItem, Typography } from '@mui/material'
 import KingBedOutlinedIcon from '@mui/icons-material/KingBedOutlined';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Person2Icon from '@mui/icons-material/Person2';
@@ -17,7 +17,25 @@ import CustomerService from "../../assets/images/CustomerService.png"
 import FreeCancellation from "../../assets/images/FreeCancellation.png"
 import Reviews from "../../assets/images/Reviews.png"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
+import rental1 from "../../assets/images/rental-1.jpg"
+import rental2 from "../../assets/images/rental-2.jpg"
+import rental3 from "../../assets/images/rental-3.jpg"
+import rental4 from "../../assets/images/rental-4.jpg"
+import rental5 from "../../assets/images/rental-5.jpg"
+import rental6 from "../../assets/images/rental-6.jpg"
+import rental7 from "../../assets/images/rental-7.jpg"
+import rental8 from "../../assets/images/rental-8.jpg"
+import rental9 from "../../assets/images/rental-9.jpg"
+import rental10 from "../../assets/images/rental-10.jpg"
+import rental11 from "../../assets/images/rental-3.jpg"
+import rental12 from "../../assets/images/rental-1.jpg"
+import rental13 from "../../assets/images/rental-2.jpg"
+import rental14 from "../../assets/images/rental-3.jpg"
+import rental15 from "../../assets/images/rental-4.jpg"
+import rental16 from "../../assets/images/rental-5.jpg"
+import rental17 from "../../assets/images/rental-6.jpg"
+import rental18 from "../../assets/images/rental-7.jpg"
+import rental19 from "../../assets/images/rental-10.jpg"
 
 const CarRentals = () => {
     const [city, setCity] = useState("");
@@ -39,8 +57,157 @@ const CarRentals = () => {
 
 
 
+    const carRentalLocations = [
+        {
+            city: 'El Segundo',
+            locations: 103,
+            averagePrice: 'PKR 14,620.21 per day',
+            imageUrl: rental1,
+        },
+        {
+            city: 'Coolangatta',
+            locations: 24,
+            averagePrice: 'PKR 14,405.52 per day',
+            imageUrl: rental2,
+        },
+        {
+            city: 'Phoenix',
+            locations: 79,
+            averagePrice: 'PKR 15,833.47 per day',
+            imageUrl: rental3
+        },
+        {
+            city: 'San Diego',
+            locations: 87,
+            averagePrice: 'PKR 12,819.11 per day',
+            imageUrl: rental4
+        },
+        {
+            city: 'Jamaica',
+            locations: 83,
+            averagePrice: 'PKR 19,151.46 per day',
+            imageUrl: rental5
+        },
+        {
+            city: 'Madrid',
+            locations: 102,
+            averagePrice: 'PKR 13,110.60 per day',
+            imageUrl: rental6
+        },
+        {
+            city: 'Calgary',
+            locations: 42,
+            averagePrice: 'PKR 13,480.24 per day',
+            imageUrl: rental7
+        },
+        {
+            city: 'Milan',
+            locations: 122,
+            averagePrice: 'PKR 13,485.65 per day',
+            imageUrl: rental8
+        },
+        {
+            city: 'Rome',
+            locations: 157,
+            averagePrice: 'PKR 13,199.76 per day',
+            imageUrl: rental9
+        },
+        {
+            city: 'Charlotte',
+            locations: 60,
+            averagePrice: 'PKR 13,103.10 per day',
+            imageUrl: rental10
+        },
+        {
+            city: 'Newark',
+            locations: 64,
+            averagePrice: 'PKR 16,361.92 per day',
+            imageUrl: rental11
+        },
+        {
+            city: 'Richmond',
+            locations: 41,
+            averagePrice: 'PKR 14,812.25 per day',
+            imageUrl: rental12
+        },
+        {
+            city: 'Horley',
+            locations: 39,
+            averagePrice: 'PKR 12,635.75 per day',
+            imageUrl: rental13
+        },
+        {
+            city: 'Woodbridge',
+            locations: 29,
+            averagePrice: 'PKR 14,391.77 per day',
+            imageUrl: rental14
+        },
+        {
+            city: 'Florence',
+            locations: 64,
+            averagePrice: 'PKR 16,492.50 per day',
+            imageUrl: rental15
+        },
+        {
+            city: 'Toronto',
+            locations: 45,
+            averagePrice: 'PKR 9,791.13 per day',
+            imageUrl: rental16
+        },
+        {
+            city: 'Seville',
+            locations: 52,
+            averagePrice: 'PKR 13,145.18 per day',
+            imageUrl: rental17
+        },
+        {
+            city: 'Pendik',
+            locations: 29,
+            averagePrice: 'PKR 11,869.87 per day',
+            imageUrl: rental18
+        },
+        {
+            city: 'Alicante',
+            locations: 62,
+            averagePrice: 'PKR 12,865.38 per day',
+            imageUrl: rental19
+        },
+        {
+            city: 'Lisbon',
+            locations: 63,
+            averagePrice: 'PKR 13,305.94 per day',
+            imageUrl: rental1
+        },
+        {
+            city: 'Kahului',
+            locations: 52,
+            averagePrice: 'PKR 14,565.54 per day',
+            imageUrl: rental2
+        },
+        {
+            city: 'Málaga',
+            locations: 37,
+            averagePrice: 'PKR 12,323.64 per day',
+            imageUrl: rental3
+        },
+        {
+            city: 'Honolulu',
+            locations: 74,
+            averagePrice: 'PKR 12,051.82 per day',
+            imageUrl: rental4
+        },
+        {
+            city: 'Lillestrøm',
+            locations: 28,
+            averagePrice: 'PKR 15,281.68 per day',
+            imageUrl: rental5
+        },
+    ]
 
-    return <>
+
+
+
+    return<>
         <SecondHeader />
 
         {/* Heading off Car Rentals Page */}
@@ -376,6 +543,103 @@ const CarRentals = () => {
         </Box>
 
 
+        {/* Popular car rental destinations Section */}
+
+
+        <Box className='container'>
+            <Typography className='fs-3 fw-bold'>Popular car rental destinations</Typography>
+            <Typography>Explore more options to rent a car for cheap</Typography>
+            <Box className='d-flex mt-3'>
+                <Box className="  px-4 py-2 text-primary border border-1 border-primary  rounded-5">
+                    <a style={{ fontSize: "14px" }} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
+                        Cities worldwide
+
+                    </a>
+                </Box>
+                <Box className=" ms-2 px-4 py-2 text-primary border border-1 border-primary  rounded-5">
+                    <a style={{ fontSize: "14px" }} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
+                        Airports worldwide
+
+                    </a>
+                </Box>
+            </Box>
+
+
+
+
+
+            <Box className="container my-4">
+                <Box className="row">
+
+
+                    {/* Yaha py map kara hai */}
+
+                    {carRentalLocations.map((rental, index) => (
+                        <Box className="col-lg-4  col-12   mb-4" key={index}>
+                            <Card className="shadow-sm">
+                                <Box className="row no-gutters">
+
+                                    <Box className="col-4 text-center mt-3 ">
+                                        <CardMedia
+                                            component="img"
+                                            image={rental.imageUrl}
+                                            alt={rental.city}
+                                            className="img-fluid rounded-2"
+                                        />
+                                    </Box>
+                                    {/* Details Section */}
+                                    <Box className="col-8">
+                                        <CardContent>
+                                            <Typography variant="h6" component="Box">
+                                                {rental.city}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                {rental.locations} car rental locations
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                Average Price: {rental.averagePrice}
+                                            </Typography>
+                                        </CardContent>
+                                    </Box>
+                                </Box>
+                            </Card>
+                        </Box>
+                    ))}
+                </Box>
+            </Box>
+
+
+
+
+
+
+           
+
+
+
+
+
+
+        </Box>
+
+
+<Box>
+    <ul className='d-flex container justify-content-between'>
+    <Box className='' ><li>Countries</li></Box>
+    <Box className='' ><li>Regions</li></Box>
+    <Box className='' ><li>Cities</li></Box>
+    <Box className='' ><li>Districts</li></Box>
+    <Box className='' ><li>Airports</li></Box>
+    <Box className='' ><li>Hotels</li></Box>
+    <Box className='' ><li>Apartments</li></Box>
+    <Box className='' ><li>Resorts</li></Box>
+    <Box className='' ><li>Villas</li></Box>
+    <Box className='' ><li>Hostels</li></Box>
+    <Box className='' ><li>B&amp;Bs</li></Box>
+    <Box className='' ><li>Discover</li></Box>
+    <Box className='' ><li>Reviews</li></Box>
+    </ul>
+</Box>
 
 
     </>
