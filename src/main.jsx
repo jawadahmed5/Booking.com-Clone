@@ -10,6 +10,7 @@ import { ErrorPage } from './Components/ErrorPage/ErrorPage.jsx';
 import StaysPage from './Components/StaysPage/StaysPage.jsx';
 import HeroSection from './Components/StaysPage/HomePage/HeroSection/HeroSection.jsx';
 import Register from './Components/Auth/RegisterPage/Register.jsx';
+import CarRentals from './Components/CarRentalsPage/CarRentals.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,10 @@ const router = createBrowserRouter([
   element:<HeroSection/>,
 },
 
-
+{
+  path:"/Carrentals",
+  element:<CarRentals/>
+},
 
 
      

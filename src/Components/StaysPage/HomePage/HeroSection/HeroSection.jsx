@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { AspectRatio } from '@mui/icons-material';
+import { AspectRatio, CheckBox } from '@mui/icons-material';
 import Dubai from "../../../../assets/images/Dubai.jpg"
 import Skardu from "../../../../assets/images/Skardu.gif"
 import Tokyo from "../../../../assets/images/Tokyo.jpg"
