@@ -11,6 +11,7 @@ import StaysPage from './Components/StaysPage/StaysPage.jsx';
 import HeroSection from './Components/StaysPage/HomePage/HeroSection/HeroSection.jsx';
 import Register from './Components/Auth/RegisterPage/Register.jsx';
 import CarRentals from './Components/CarRentalsPage/CarRentals.jsx';
+import HotelsDetailPage from './Components/HotelsDetailPage/HotelsDetailPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     element: <App />,  
     children: [
 {
-  path:"/",
+  path:"/Home",
   element:<StaysPage/>,
   
 },
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
   path:"/Carrentals",
   element:<CarRentals/>
 },
+
+{
+  path:"/HotelsDetailPage",
+  element:<HotelsDetailPage/>
+}
 
 
      
