@@ -4,7 +4,8 @@ import AirplaneTicketOutlinedIcon from '@mui/icons-material/AirplaneTicketOutlin
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
 import AttractionsOutlinedIcon from '@mui/icons-material/AttractionsOutlined';
 import LocalTaxiOutlinedIcon from '@mui/icons-material/LocalTaxiOutlined';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
+import { Link } from 'react-router';
 
 const SecondHeader = () => {
   return (
@@ -15,6 +16,16 @@ const SecondHeader = () => {
         
         <div className="container">
           <ul className="nav mb-2 mb-lg-0 d-flex">
+            
+            
+            
+            
+            
+            
+            
+            
+          <Link to="/">
+
             <li className="nav-item  ">
             <div style={{cursor:"pointer"}} className="nav-link active   py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
         <KingBedOutlinedIcon />
@@ -23,10 +34,15 @@ const SecondHeader = () => {
         </a>
         </div>
 </li>
+</Link>
 
 
         
-            <li className="nav-item  ">
+
+
+<Link to="/">
+
+<li className="nav-item  ">
             <div style={{cursor:"pointer"}} className="nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
             <AirplaneTicketOutlinedIcon />
         <a style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
@@ -35,6 +51,10 @@ const SecondHeader = () => {
         </div>
 
             </li>
+</Link>
+
+
+   <Link to="/Carrentals">
          
             <li className="nav-item  ">
             <div style={{cursor:"pointer"}} className="nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
@@ -45,8 +65,13 @@ const SecondHeader = () => {
         </div>
 
             </li>
+            </Link>
+{/* 
+            <Link to="Carrentals">
+<Button>hwllo</Button>
 
-            <li className="nav-item  ">
+</Link> */}
+   <li className="nav-item  ">
             <div style={{cursor:"pointer"}} className="nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
             <AttractionsOutlinedIcon /> 
         <a style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
@@ -55,6 +80,7 @@ const SecondHeader = () => {
         </div>
 
             </li>
+   
 
 
             <li className="nav-item  ">

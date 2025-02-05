@@ -95,170 +95,6 @@ const HotelsDetailPage = () => {
 
 
 
-
-    // const hotels = [
-
-    //           {
-    //         name: "Elysium Downtown Luxury Apartments",
-    //         location: "Blue Area, Islamabad",
-    //         distance: "4.6 km from down town",
-    //         rating: 10,
-    //         reviews: 9,
-    //         description: "Deluxe King Studio ",
-    // RoomDetails:"Entire studio • 1 bathroom • 1 kitchen • 84m²", 
-    //         bedType: "1 king bed",
-    //         breakFast: "Breakfast included",
-    //         Cncellation: "Free cancellation",
-    //         Replacement: "No prepayment needed",
-    //         Pay: "pay at the property ",
-    //         availableRooms: 5,
-    //         price: {
-    //             original: 34000,
-    //             discounted: 20400,
-    //             taxesAndFees: 5304
-    //         },
-    //         deal: "Limited-time Deal",
-    //         newToBooking: "newToBooking",
-    //         featured: "featured",
-    //         Avaialablity: "See availablelity",
-    //         time: "1 night, 2 adults",
-    //         imageUrl: HotelDetailPic1,
-
-    //     },
-
-
-    //     {
-    //         name: "Greens By Roomy, Kalam",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "7.2 km",
-    //         rating: 8.6,
-    //         reviewCount: 22,
-    //         reviewText: "Excellent",
-    //         earlyDeal: true,
-    //         roomType: "Deluxe King Room",
-    //         bedType: "1 full bed",
-    //         breakfastIncluded: true,
-    //         freeCancellation: true,
-    //         prepaymentNeeded: false,
-    //         availability: "Only 2 rooms left at this price",
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { original: 30000, current: 22500, currency: "PKR", includesTaxes: true },
-    //         imageUrl: HotelDetailPic2
-    //     },
-    //     {
-    //         name: "La Serene Hotel and Resort, Kalam",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "7.5 km",
-    //         rating: 8.7,
-    //         reviewCount: 6,
-    //         reviewText: "Excellent",
-    //         roomType: "Standard Double Room",
-    //         bedType: "1 king bed",
-    //         breakfastIncluded: true,
-    //         freeCancellation: true,
-    //         prepaymentNeeded: false,
-    //         availability: "Only 1 room left at this price",
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { original: 17019, current: 15998, currency: "PKR", includesTaxes: false, extraFees: 1600 },
-    //         imageUrl: HotelDetailPic3
-    //     },
-    //     {
-    //         name: "Maria Hotel and Resorts",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "6.5 km",
-    //         rating: 4.7,
-    //         reviewCount: 4,
-    //         reviewText: "Review score",
-    //         roomType: "Double Room with Private Bathroom",
-    //         bedType: "1 full bed",
-    //         breakfastIncluded: true,
-    //         freeCancellation: true,
-    //         prepaymentNeeded: false,
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { amount: 16000, currency: "PKR", includesTaxes: false, extraFees: 1600 },
-    //         imageUrl: HotelDetailPic4
-    //     },
-    //     {
-    //         name: "Holiday Inn Kalam",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "6.2 km",
-    //         rating: "New to Booking.com",
-    //         roomType: "Triple Room",
-    //         bedType: "1 full bed",
-    //         breakfastIncluded: true,
-    //         freeCancellation: true,
-    //         prepaymentNeeded: false,
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { amount: 7650, currency: "PKR", includesTaxes: false, extraFees: 765 },
-    //         imageUrl: HotelDetailPic5
-    //     },
-    //     {
-    //         name: "Spring Fields Resort Kalam",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "7.6 km",
-    //         roomType: "Deluxe Family Room",
-    //         bedType: "2 beds (1 twin, 1 queen)",
-    //         breakfastIncluded: false,
-    //         freeCancellation: true,
-    //         prepaymentNeeded: false,
-    //         availability: "Only 2 rooms left at this price",
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { amount: 25000, currency: "PKR", includesTaxes: false, extraFees: 2500 },
-    //         imageUrl: HotelDetailPic6
-    //     },
-    //     {
-    //         name: "Legend Hotel Kalam",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "6.3 km",
-    //         roomType: "Deluxe King Room",
-    //         bedType: "1 queen bed",
-    //         availability: "Only 2 rooms left at this price",
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { amount: 9999, currency: "PKR", includesTaxes: false, extraFees: 1000 },
-    //         imageUrl: HotelDetailPic7
-    //     },
-    //     {
-    //         name: "Arbab's Cottage",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "7.8 km",
-    //         roomType: "Two-Bedroom House",
-    //         bedType: "15 beds (7 sofa beds, 2 queens, 6 futons)",
-    //         breakfastIncluded: true,
-    //         freeCancellation: true,
-    //         prepaymentNeeded: false,
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { amount: 25000, currency: "PKR", includesTaxes: false, extraFees: 2500 },
-    //         imageUrl: HotelDetailPic8
-    //     },
-    //     {
-    //         name: "Grace Palace Hotel",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "5.5 km",
-    //         roomType: "Deluxe Double Room",
-    //         bedType: "1 full bed",
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { amount: 9450, currency: "PKR", includesTaxes: false, extraFees: 945 },
-    //         imageUrl: HotelDetailPic9
-    //     },
-    //     {
-    //         name: "Khana Badosh Resort",
-    //         location: "Kalām",
-    //         distanceFromDowntown: "4.8 km",
-    //         rating: 1.0,
-    //         reviewCount: 1,
-    //         reviewText: "Review score",
-    //         roomType: "Deluxe Double Room",
-    //         bedType: "1 full bed",
-    //         breakfastIncluded: true,
-    //         availability: "Only 7 rooms left at this price",
-    //         stayDetails: { nights: 1, guests: 2 },
-    //         price: { amount: 11499, currency: "PKR", includesTaxes: false, extraFees: 1150 },
-    //         imageUrl: HotelDetailPic10
-    //     }
-
-    // ];
-
-
     const hotels = [
         {
             name: "Elysium Downtown Luxury Apartments",
@@ -495,9 +331,10 @@ const HotelsDetailPage = () => {
 
 
     return <>
+    <Box className='pb-5'>
         <SecondHeader />
 
-        <Box className="container">
+        <Box className="container ">
             <Box
                 className="row"
                 style={{ gap: "" }}
@@ -1190,7 +1027,7 @@ const HotelsDetailPage = () => {
 
             </Box>
         </Box>
-
+        </Box>
     </>
 }
 

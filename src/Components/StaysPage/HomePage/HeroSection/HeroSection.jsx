@@ -51,6 +51,7 @@ import Destination5 from "../../../../assets/images/nexttrip-4.webp"
 import Genius from "../../../../assets/images/Genius.png"
 import HalfCircle from "../../../../assets/images/half circle.png"
 import chair from "../../../../assets/images/chair.png"
+import { Link } from 'react-router';
 
 
 
@@ -301,11 +302,13 @@ const HeroSection = () => {
           )}
         </Box>
 
-        <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
+        <Box  className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
 
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Stack direction="row" spacing={2}>
+          <LocalizationProvider  dateAdapter={AdapterDayjs}>
+            <Stack sx={{width:"100%"}} direction="row" spacing={2}>
               <DatePicker
+              className='border-0' 
+              sx={{width:"100%",outlineColor:"none"}}
                 value={value}
                 onChange={(newValue) => setValue(newValue)}
               />
@@ -362,23 +365,27 @@ const HeroSection = () => {
       <Box className="container">
         <Box className="row">
           <Box className=' col-lg-4 col-md-6 col-sm-12 col-xs-12 pt-4'>
-            <Card className="d-flex  w-100 ">
+
+  <Link className='text-decoration-none' to="/HotelsDetailPage">
+  <Card className="d-flex  w-100  p-3 ">
 
 
-              <img img-fluid style={{ width: "60px" }} className='img-fluid rounded-2' src={Dubai} />
-              <Box className="d-flex flex-column justify-content-center ms-2" >
-                <Typography className='fs-6 fw-bold' >Dubai</Typography>
-                <Typography >
-                  Jan 31-Feb 1, 2 people
-                </Typography>
-              </Box>
-            </Card>
+<img img-fluid style={{ width: "60px" }} className='img-fluid rounded-2' src={Dubai} />
+<Box className="d-flex flex-column justify-content-center ms-2" >
+  <Typography className='fs-6 fw-bold' >Dubai</Typography>
+  <Typography >
+    Jan 31-Feb 1, 2 people
+  </Typography>
+</Box>
+</Card>
+  </Link>
 
 
           </Box>
           <Box className='col-lg-4 col-md-6 col-sm-12 col-xs-12 pt-4'>
+          <Link className='text-decoration-none' to="/HotelsDetailPage">
 
-            <Card className="d-flex w-100 ">
+            <Card className="d-flex w-100 p-3">
 
 
               <img className='  rounded-2' src={Skardu} />
@@ -389,10 +396,12 @@ const HeroSection = () => {
                 </Typography>
               </Box>
             </Card>
+            </Link>
           </Box>
           <Box className='col-lg-4 col-md-6 col-sm-12 col-xs-1 pt-4'>
+          <Link className='text-decoration-none' to="/HotelsDetailPage">
 
-            <Card className="d-flex  w-100 ">
+            <Card className="d-flex  w-100 p-3">
 
 
               <img className='  rounded-2' src={Tokyo} />
@@ -403,6 +412,7 @@ const HeroSection = () => {
                 </Typography>
               </Box>
             </Card>
+            </Link>
           </Box>
         </Box>
       </Box>
@@ -466,32 +476,35 @@ const HeroSection = () => {
 
 
     <Box className='container d-none d-lg-block d-md-block mt-5'>
-      <Typography className='fw-bold'
+      <Typography className='fw-bold ms-3 fs-4'
       >Trending destinations
+      </Typography>
+
+
         <Box className=" "
         >
           <Box className="row " >
-            <Box style={{ width: "470px" }} className='  col-lg-6 col-md-6  '>
+            <Box style={{ width: "575px" }} className='  col-lg-6 col-md-6  '>
               <img className='img-fluid rounded-3' src={trendingDubai} alt="" />
             </Box>
-            <Box style={{ width: "460px" }} className='  col-lg-6 col-md-6'>
+            <Box style={{ width: "565px" }} className='  col-lg-6 col-md-6'>
               <img className='img-fluid  rounded-3' src={trendingAbuDhabi} alt="" />
 
             </Box>
           </Box>
 
           <Box className='row mt-2'>
-            <Box style={{ width: "310px" }} className='col-lg-4 col-md-4 ms-1' >
+            <Box style={{ width: "377px" }} className='col-lg-4 col-md-4 ms-1' >
               <img className='img-fluid  rounded-3' src={trendingSharjah} alt="" />
 
             </Box>
 
-            <Box style={{ width: "310px" }} className='col-lg-4 col-md-4' >
+            <Box style={{ width: "377px" }} className='col-lg-4 col-md-4' >
               <img className='img-fluid  rounded-3' src={trendingIstanbol} alt="" />
 
             </Box>
 
-            <Box style={{ width: "310px" }} className='col-lg-4 col-md-4' >
+            <Box style={{ width: "377px" }} className='col-lg-4 col-md-4 ' >
               <img className='img-fluid  rounded-3' src={trendingParis} alt="" />
 
             </Box>
@@ -500,7 +513,6 @@ const HeroSection = () => {
 
 
         </Box>
-      </Typography>
     </Box>
 
     <Box className='container' >
@@ -544,6 +556,8 @@ const HeroSection = () => {
 
         >
           {cities.slice(0, 10).map((city) => (
+            <Link className='text-decoration-none' to="/HotelsDetailPage">
+            
             <Box
               style={{
                 border: '1px solid #ddd',
@@ -567,11 +581,12 @@ const HeroSection = () => {
 
               <Box>
 
-                <Typography className='fs-6 fw-bold text-start mt-1' >{city.name}</Typography>
-                <Typography className='text-start' style={{ fontSize: "12px" }}>{city.properties}</Typography>
+                <Typography className='fs-6 fw-bold text-start mt-1 text-black' >{city.name}</Typography>
+                <Typography className='text-start text-secondary' style={{ fontSize: "12px" }}>{city.properties}</Typography>
               </Box>
 
             </Box>
+            </Link>
 
 
           ))}
@@ -601,7 +616,9 @@ const HeroSection = () => {
         }}
       >
         {hotels.map((hotel, index) => (
-          <Box
+         
+       <Link className='text-decoration-none text-black' to="/HotelsDetailPage">
+         <Box
 
             className=' rounded-2'
             key={index}
@@ -611,7 +628,7 @@ const HeroSection = () => {
               borderRadius: 2,
               flex: "0 0 auto",
               minWidth: "220px",
-              maxWidth: "220px",
+              minHeight: "310px",
 
             }}
           >
@@ -703,6 +720,9 @@ const HeroSection = () => {
             </Box>
 
           </Box>
+       
+       </Link>
+
         ))}
       </Box>
     </Box>
@@ -789,7 +809,7 @@ const HeroSection = () => {
         Travel more, spend less
 
       </Typography>
-      <Box className="container mt-3 border border-1 rounded-3">
+      {/* <Box className="container mt-3 border border-1 rounded-3">
         <Box className='row' >
 
           <Card className='col-lg-12 col-md-12 col-sm-12  '>
@@ -828,47 +848,50 @@ const HeroSection = () => {
           </Card>
 
         </Box>
-      </Box>
+      </Box> */}
 
     </Box>
 
 
-    <Card className='mt-5 container'>
+   <Link className='text-decoration-none' to="/HotelsDetailPage">
 
-      <Box className='container'>
-        <Box className='row'>
+   <Card className='mt-5 container'>
 
-          <Box className='col-lg-1 col-md-1 col-sm-12 mt-5 d-flex  align-items-center text-start'>
-            <Box className=''><img width={50} src={HalfCircle} alt="" /></Box>
+<Box className='container'>
+  <Box className='row'>
 
-          </Box>
+    <Box className='col-lg-1 col-md-1 col-sm-12 mt-5 d-flex  align-items-center text-start'>
+      <Box className=''><img width={50} src={HalfCircle} alt="" /></Box>
+
+    </Box>
 
 
-          <Box className='col-lg-6 col-md-8 col-sm-12 text-center '>
+    <Box className='col-lg-6 col-md-8 col-sm-12 text-center '>
 
-            <Box style={{ paddingBottom: "80px", paddingTop: "80px" }} className='text-center  bg-primary rounded-start-pill rounded-end-pill  '>
-              <Typography className='fs-4 fw-bolder me-4 text-white mb-2'>Find
-                apartments
-                <br />
-                for your next trip
+      <Box style={{ paddingBottom: "80px", paddingTop: "80px" }} className='text-center  bg-primary rounded-start-pill rounded-end-pill  '>
+        <Typography className='fs-4 fw-bolder me-4 text-white mb-2'>Find
+          apartments
+          <br />
+          for your next trip
 
-              </Typography>
+        </Typography>
 
-              <Box><Button className='bg-white text-primary fw-bold  px-5'>Discover homes</Button></Box>
-
-            </Box>
-          </Box>
-
-          <Box className='col-lg-4 col-md-4 col-sm-12 img-fluid d-flex  align-items-center text-center '>
-            <img style={{ width: "100%" }} src={chair} alt="" />
-          </Box>
-
-        </Box>
-
+        <Box><Button className='bg-white text-primary fw-bold  px-5'>Discover homes</Button></Box>
 
       </Box>
+    </Box>
 
-    </Card>
+    <Box className='col-lg-4 col-md-4 col-sm-12 img-fluid d-flex  align-items-center text-center '>
+      <img style={{ width: "100%" }} src={chair} alt="" />
+    </Box>
+
+  </Box>
+
+
+</Box>
+
+</Card>
+   </Link>
 
 
 
@@ -969,39 +992,39 @@ Popular with travelers from Pakistan
           }} className='row'>
 
           <List className=' col-lg-3 col-md-4 col-6 ms-3 '>
-            <ListItem className=''>Islamabad Hotels</ListItem>
-            <ListItem className=''>Rawalpindi Hotels</ListItem>
-            <ListItem className=''>Peshawar Hotels</ListItem>
-            <ListItem className=''>Hyderabad Hotels</ListItem>
-            <ListItem className=''>Bahria Town Hotels</ListItem>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Islamabad Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Rawalpindi Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Peshawar Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Hyderabad Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Bahria Town Hotels</ListItem></Link>
           </List>
           <List className=' col-lg-3 col-md-4 col-6 '>
-            <ListItem className=''>Lahore Hotels</ListItem>
-            <ListItem className=''>MListtan Hotels</ListItem>
-            <ListItem className=''>skardu Hotels</ListItem>
-            <ListItem className=''>Hunza Valley Hotels</ListItem>
-            <ListItem className=''>Ayubia Town Hotels</ListItem>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Lahore Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>MListtan Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>skardu Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Hunza Valley Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Ayubia Town Hotels</ListItem></Link>
           </List>
           <List className=' col-lg-3 col-md-4 col-6 '>
-            <ListItem className=''>Karachi Hotels</ListItem>
-            <ListItem className=''>Faisalabd Hotels</ListItem>
-            <ListItem className=''>Gujranwala Hotels</ListItem>
-            <ListItem className=''>Malam Jabba Hotels</ListItem>
-            <ListItem className=''>Sialkot Hotels</ListItem>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Karachi Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Faisalabd Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Gujranwala Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Malam Jabba Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Sialkot Hotels</ListItem></Link>
           </List>
           <List className=' col-lg-3 col-md-4 col-6 '>
-            <ListItem className=''>Murree Hotels</ListItem>
-            <ListItem className=''>Kalam Hotels</ListItem>
-            <ListItem className=''>Swat Hotels</ListItem>
-            <ListItem className=''>Muzaffarabad Hotels</ListItem>
-            <ListItem className=''>Bahawalpur Hotels</ListItem>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Murree Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Kalam Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Swat Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Muzaffarabad Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Bahawalpur Hotels</ListItem></Link>
           </List>
           <List className=' col-lg-3 col-md-4 col-6 '>
-            <ListItem className=''>Nathia GaListItem Hotels</ListItem>
-            <ListItem className=''>Naran Hotels</ListItem>
-            <ListItem className=''>Abbottabad Hotels</ListItem>
-            <ListItem className=''>Bhurban Hotels</ListItem>
-            <ListItem className=''>Mingora Hotels</ListItem>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Nathia GaListItem Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Naran Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Abbottabad Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Bhurban Hotels</ListItem></Link>
+            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Mingora Hotels</ListItem></Link>
           </List>
           <List className=" col-lg-3 col-md-4 col-6 ">
         <ListItem className="">Kāgān Hotels</ListItem>
