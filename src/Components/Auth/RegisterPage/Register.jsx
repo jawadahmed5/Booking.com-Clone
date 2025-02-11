@@ -39,8 +39,8 @@ const Register = () => {
               </IconButton>
             </Tooltip>
             <Link to="/Signin" >
-          <button style={{fontSize:"12px"}} class="btn bg-white py-1 px-2  text-primary rounded-1 outline-primary  fw-medium" >Sign in</button>
-          </Link>
+              <button style={{ fontSize: "12px" }} class="btn bg-white py-1 px-2  text-primary rounded-1 outline-primary  fw-medium" >Sign in</button>
+            </Link>
           </Toolbar>
         </AppBar>
       </Box>
@@ -50,78 +50,78 @@ const Register = () => {
     <Box className='mt-3'>
 
 
-<Box sx={{ display: "flex", justifyContent: "center", }} className=''>
-  <form action="" onSubmit={handleSubmit(submit)} className=' '>
+      <Box sx={{ display: "flex", justifyContent: "center", }} className=''>
+        <form action="" onSubmit={handleSubmit(submit)} className=' '>
 
-    <Typography className='text-start fs-5 fw-bold'> Sign in or create an account</Typography>
-    <Typography sx={{ fontSize: "14px" }} className='mt-3 '>
-      You can sign in using your Booking.com account to<br /> access our services.
-    </Typography>
-    <Box className=' mt-2'>
-      <Box className='text-start'>  <label className='fw-semibold  '>Full Name</label><br /></Box>
+          <Typography className='text-start fs-5 fw-bold'> Sign in or create an account</Typography>
+          <Typography sx={{ fontSize: "14px" }} className='mt-3 '>
+            You can sign in using your Booking.com account to<br /> access our services.
+          </Typography>
+          <Box className=' mt-2'>
+            <Box className='text-start'>  <label className='fw-semibold  '>Full Name</label><br /></Box>
 
-      <TextField sx={{ width: "330px" }} size='small' placeholder='Enter your full name' className=' rounded-1' {...register("FullName", { required: "Full Name is required", errors })} type="text" ></TextField>
-      {
-        errors.FullName &&
-        <p className='text-danger text-center  fw-semibold'>
-          {
-            errors.FullName.message
-          }
-        </p>
-      }
+            <TextField sx={{ width: "330px" }} size='small' placeholder='Enter your full name' className=' rounded-1' {...register("FullName", { required: "Full Name is required", errors })} type="text" ></TextField>
+            {
+              errors.FullName &&
+              <p className='text-danger text-center  fw-semibold'>
+                {
+                  errors.FullName.message
+                }
+              </p>
+            }
+          </Box>
+
+
+          <Box className=' mt-2'>
+            <Box className='text-start'>  <label className='fw-semibold  '>Email address</label><br /></Box>
+
+            <TextField sx={{ width: "330px" }} size='small' placeholder='Enter your email address' className=' rounded-1' {...register("email", { required: "Email is required", errors })} type="email" ></TextField>
+            {
+              errors.email &&
+              <p className='text-danger text-center  fw-semibold'>
+                {
+                  errors.email.message
+                }
+              </p>
+            }
+          </Box>
+          <Box className='my-2'>
+            <Box className='text-start '>  <label className='fw-semibold  '>Password</label><br /></Box>
+
+            <TextField sx={{ width: "330px" }} size='small' placeholder='Enter your Password' className=' rounded-1 ' {...register("password", { required: "Password is required" })} type="password" ></TextField>
+            {
+              errors.password &&
+              <p className='text-danger text-center fw-semibold'>
+                {
+                  errors.password.message
+                }
+              </p>
+            }
+
+          </Box>
+          <Button fullWidth type="submit" className='mt-2 fw-bold' variant="contained">Register</Button>
+          <Typography className='fs-6 text-center mt-2 '>
+            or use one of these options
+          </Typography>
+
+          <Box className='text-center mt-3 '>
+            <button className='mx-3 fw-bold  border-0  '><GoogleIcon /></button>
+            <button className='mx-3 border-0'><GitHubIcon /></button>
+
+            <button className='mx-3 border-0'><AppleIcon /></button>
+          </Box>
+          <hr></hr>
+
+          <Typography sx={{ fontSize: '12px' }} className='text-center '>By signing in or creating an account, you agree with our <span className='text-primary'>Terms <br /> </span>& <span className='text-primary'>Conditions</span> and <span className='text-primary'> Privacy Statement</span></Typography>
+          <Typography sx={{ fontSize: '12px' }} className='text-center mt-3'>All rights reserved.<br />
+            Copyright (2006-2025) – Booking.com™</Typography>
+        </form>
+      </Box>
+
     </Box>
-    
-    
-    <Box className=' mt-2'>
-      <Box className='text-start'>  <label className='fw-semibold  '>Email address</label><br /></Box>
-
-      <TextField sx={{ width: "330px" }} size='small' placeholder='Enter your email address' className=' rounded-1' {...register("email", { required: "Email is required", errors })} type="email" ></TextField>
-      {
-        errors.email &&
-        <p className='text-danger text-center  fw-semibold'>
-          {
-            errors.email.message
-          }
-        </p>
-      }
-    </Box>
-    <Box className='my-2'>
-      <Box className='text-start '>  <label className='fw-semibold  '>Password</label><br /></Box>
-
-      <TextField sx={{ width: "330px" }} size='small' placeholder='Enter your Password' className=' rounded-1 ' {...register("password", { required: "Password is required" })} type="password" ></TextField>
-      {
-        errors.password &&
-        <p className='text-danger text-center fw-semibold'>
-          {
-            errors.password.message
-          }
-        </p>
-      }
-
-    </Box>
-    <Button fullWidth type="submit" className='mt-2 fw-bold' variant="contained">Register</Button>
-    <Typography className='fs-6 text-center mt-2 '>
-      or use one of these options
-    </Typography>
-
-    <Box className='text-center mt-3 '>
-      <button className='mx-3 fw-bold  border-0  '><GoogleIcon /></button>
-      <button className='mx-3 border-0'><GitHubIcon /></button>
-
-      <button className='mx-3 border-0'><AppleIcon /></button>
-    </Box>
-    <hr></hr>
-
-    <Typography sx={{ fontSize: '12px' }} className='text-center '>By signing in or creating an account, you agree with our <span className='text-primary'>Terms <br /> </span>& <span className='text-primary'>Conditions</span> and <span className='text-primary'> Privacy Statement</span></Typography>
-    <Typography sx={{ fontSize: '12px' }} className='text-center mt-3'>All rights reserved.<br />
-      Copyright (2006-2025) – Booking.com™</Typography>
-  </form>
-</Box>
-
-</Box>
 
 
-    </>
+  </>
 }
 
 export default Register

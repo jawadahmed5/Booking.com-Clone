@@ -8,9 +8,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 const App = () => {
   return (
     <div>
-      <Header />  {/* Header ko App mein add kiya */}
-      <Outlet />  {/* Content render hoga yahan */}
-      <Footer />  {/* Footer ko App mein add kiya */}
+      <Header />  
+      <Outlet />  
+      <Footer />  
     </div>
   );
 };

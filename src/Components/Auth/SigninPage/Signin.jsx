@@ -30,7 +30,7 @@ const Signin = () => {
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
 
-            <Toolbar  className="container">
+            <Toolbar className="container">
               <Typography className='fs-4 fw-bold' sx={{ flexGrow: 1 }}>
                 Booking.com
               </Typography>
@@ -46,8 +46,8 @@ const Signin = () => {
               </Tooltip>
 
               <Link to="/Register" >
-          <button style={{fontSize:"12px"}} class="btn bg-white py-1 px-2  text-primary rounded-1 outline-primary me-2 fw-medium " >Register</button>
-          </Link>
+                <button style={{ fontSize: "12px" }} class="btn bg-white py-1 px-2  text-primary rounded-1 outline-primary me-2 fw-medium " >Register</button>
+              </Link>
             </Toolbar>
           </AppBar>
         </Box>
@@ -105,7 +105,7 @@ const Signin = () => {
               <Button className='mx-3 border-0'><AppleIcon /></Button>
             </Box>
             <hr></hr>
-    <Typography sx={{ fontSize: '12px' }} className='text-center '>By signing in or creating an account, you agree with our <span className='text-primary'>Terms <br /> </span>& <span className='text-primary'>Conditions</span> and <span className='text-primary'> Privacy Statement</span></Typography>
+            <Typography sx={{ fontSize: '12px' }} className='text-center '>By signing in or creating an account, you agree with our <span className='text-primary'>Terms <br /> </span>& <span className='text-primary'>Conditions</span> and <span className='text-primary'> Privacy Statement</span></Typography>
 
             <Typography sx={{ fontSize: '12px' }} className='text-center mt-3'>All rights reserved.<br />
               Copyright (2006-2025) – Booking.com™</Typography>

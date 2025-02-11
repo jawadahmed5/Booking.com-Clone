@@ -8,9 +8,7 @@ export const ErrorPage = () => {
         <Box sx={{height:"100vh"}} className='d-flex justify-content-center align-items-center'>
 
             <Box >
-                {/* <Typography variant='h1'   >Oops!</Typography> */}
-
-
+               
                 <Box>
 
                     <Typography variant='h3'   >404 - Page Not Found</Typography>

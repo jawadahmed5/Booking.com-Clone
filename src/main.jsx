@@ -1,9 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import './index.css';
-import App from './App.jsx'; 
-import { createBrowserRouter, RouterProvider } from 'react-router'; 
-// import Signup from './Components/Auth/SignupPage/Signup.jsx';
+import App from './App.jsx';
 import Signin from './Components/Auth/SigninPage/Signin.jsx';
 import SecondHeader from './Components/Header/SecondHeader.jsx';
 import { ErrorPage } from './Components/ErrorPage/ErrorPage.jsx';
@@ -12,53 +11,27 @@ import HeroSection from './Components/StaysPage/HomePage/HeroSection/HeroSection
 import Register from './Components/Auth/RegisterPage/Register.jsx';
 import CarRentals from './Components/CarRentalsPage/CarRentals.jsx';
 import HotelsDetailPage from './Components/HotelsDetailPage/HotelsDetailPage.jsx';
+import Availability from './Components/AvailabilityPage/Availability.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,  
+    element: <App />,
+    errorElement: <ErrorPage />, 
     children: [
-{
-  path:"/",
-  element:<StaysPage/>,
-  
-},
-{
-  path:"/HeroSection",
-  element:<HeroSection/>,
-},
-
-{
-  path:"/Carrentals",
-  element:<CarRentals/>
-},
-
-{
-  path:"/HotelsDetailPage",
-  element:<HotelsDetailPage/>
-}
-
-
-     
+      { path: "/", element: <StaysPage /> },
+      { path: "/hero-section", element: <HeroSection /> }, 
+      { path: "/car-rentals", element: <CarRentals /> },
+      { path: "/hotels-detail", element: <HotelsDetailPage /> },
+      { path: "/availability/:id", element: <Availability /> },
     ],
-
-
-    
   },
-
-
-  {
-    path: "Register",  
-     element: <Register />,
-  },
-  {
-    path: "Signin",  
-    element: <Signin />,
-  }
+  { path: "/register", element: <Register /> },
+  { path: "/signin", element: <Signin /> }
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-   </StrictMode>
+  </StrictMode>
 );

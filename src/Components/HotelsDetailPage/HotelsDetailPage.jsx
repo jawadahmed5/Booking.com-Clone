@@ -97,6 +97,7 @@ const HotelsDetailPage = () => {
 
     const hotels = [
         {
+            id: 1,
             name: "Elysium Downtown Luxury Apartments",
             location: "Blue Area, Islamabad",
             distance: "4.6 km from downtown",
@@ -122,6 +123,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic1
         },
         {
+            id: 2,
             name: "Elysium-Mountain Luxury Apartments",
             location: "Blue Area, Islamabad",
             distance: "4.6 km from downtown",
@@ -144,6 +146,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic2
         },
         {
+            id: 3,
             name: "Sky Heights Signature Apartments",
             location: "Blue Area, Islamabad",
             distance: "4.6 km from downtown",
@@ -166,6 +169,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic3
         },
         {
+            id: 4,
             name: "Holiday Inn Islamabad",
             location: "E-11 Sector, Islamabad",
             distance: "12 km from downtown",
@@ -185,6 +189,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic4
         },
         {
+            id: 5,
             name: "Blue Moon Residency Jinnah Super",
             location: "F-6 Sector, Islamabad",
             distance: "2.5 km from downtown",
@@ -205,6 +210,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic5
         },
         {
+            id: 6,
             name: "Elysium-Sky Views Elite Apartments",
             location: "Blue Area, Islamabad",
             distance: "4.6 km from downtown",
@@ -229,6 +235,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic6
         },
         {
+            id: 7,
             name: "Elysium Heights Premium Serviced Apartments",
             location: "Blue Area, Islamabad",
             distance: "4.6 km from downtown",
@@ -251,6 +258,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic7
         },
         {
+            id: 8,
             name: "Reina Boutique Hotel - G6",
             location: "G-6 Sector, Islamabad",
             distance: "1.1 km from downtown",
@@ -271,6 +279,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic8
         },
         {
+            id: 9,
             name: "Three Trees Hotel",
             location: "G-7 Sector, Islamabad",
             distance: "3.3 km from downtown",
@@ -291,6 +300,7 @@ const HotelsDetailPage = () => {
             image: HotelDetailPic9
         },
         {
+            id: 10,
             name: "Luxury Apartments - Elysium Opposite to Centaurus Mall",
             location: "Blue Area, Islamabad",
             distance: "4.6 km from downtown",
@@ -331,702 +341,704 @@ const HotelsDetailPage = () => {
 
 
     return <>
-    <Box className='pb-5'>
-        <SecondHeader />
+        <Box className='pb-5'>
+            <SecondHeader />
 
-        <Box className="container ">
-            <Box
-                className="row"
-                style={{ gap: "" }}
-            >
-                <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-3 col-md-6 col-sm-12">
-                    <KingBedOutlinedIcon />
-                    <input width={100}
-
-                        type="text"
-                        placeholder="Dubai"
-                        className="form-control  border-0 p-1"
-                        style={{ width: "100%", outline: "none", boxShadow: "none" }}
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        onFocus={() => setShowCitySuggestions(true)}
-                        onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
-                    />
-                    {showCitySuggestions && (
-                        <Box className="position-absolute bg-white border rounded" style={{ top: "100%", left: 0, width: "100%", zIndex: 10 }}>
-                            <Box className="p-2">Dubai</Box>
-                            <Box className="p-2">London</Box>
-                            <Box className="p-2">New York</Box>
-                        </Box>
-                    )}
-                </Box>
-
-                <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
-
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <Stack direction="row" spacing={2}>
-                            <DatePicker
-                                value={value}
-                                onChange={(newValue) => setValue(newValue)}
-                            />
-                        </Stack>
-                    </LocalizationProvider>
-                </Box>
-
-                <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
-                    <Person2Icon />
-                    <input
-                        type="text"
-                        placeholder="2 adults - 0 children - 1 room"
-                        className="form-control border-0"
-                        style={{ width: "100%", outline: "none", boxShadow: "none" }}
-                        value={guestInfo}
-                        onFocus={() => setShowGuestModal(true)}
-                        onBlur={() => setTimeout(() => setShowGuestModal(false), 200)}
-                    />
-                    {showGuestModal && (
-                        <Box className="position-absolute bg-white border rounded p-3" style={{ top: "100%", left: 0, width: "300px", zIndex: 10 }}>
-                            <Box className="d-flex justify-content-between align-items-center mb-2">
-                                <span>Adults</span>
-                                <input type="number" className="form-control w-25" defaultValue={2} />
-                            </Box>
-                            <Box className="d-flex justify-content-between align-items-center mb-2">
-                                <span>Children</span>
-                                <input type="number" className="form-control w-25" defaultValue={0} />
-                            </Box>
-                            <Box className="d-flex justify-content-between align-items-center">
-                                <span>Rooms</span>
-                                <input type="number" className="form-control w-25" defaultValue={1} />
-                            </Box>
-                        </Box>
-                    )}
-                </Box>
-
-                <button className="btn btn-primary translate-middle-y text-center fw-bold border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12">Search</button>
-            </Box>
-        </Box>
-
-
-
-        <Box className='container'>
-            <Stack spacing={2}>
-
-                <Breadcrumbs
-                    separator={<NavigateNextIcon fontSize="10" />}
-                    aria-label="breadcrumb"
+            <Box className="container ">
+                <Box
+                    className="row"
+                    style={{ gap: "" }}
                 >
-                    {breadcrumbs}
-                </Breadcrumbs>
-            </Stack>
-        </Box>
+                    <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-3 col-md-6 col-sm-12">
+                        <KingBedOutlinedIcon />
+                        <input width={100}
 
-
-        <Box className='container'>
-            <Box className='row'>
-                <Box className='col-lg-3 col-md-3 col-sm-12'>
-
-
-
-
-                    <Box className="position-relative mt-2 ">
-                        <iframe className='rounded-2' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.824470487258!2d73.10539277479822!3d33.713490635543025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfc0697d15d10d%3A0x1aaf6f84f1af44a4!2sOne%20Constitution%20Avenue!5e0!3m2!1sen!2s!4v1738765511573!5m2!1sen!2s" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <Button variant='contained' size='small' className='w-75 position-absolute top-50 mt-5 start-50 translate-middle '>Show on the map</Button>
+                            type="text"
+                            placeholder="Dubai"
+                            className="form-control  border-0 p-1"
+                            style={{ width: "100%", outline: "none", boxShadow: "none" }}
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            onFocus={() => setShowCitySuggestions(true)}
+                            onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
+                        />
+                        {showCitySuggestions && (
+                            <Box className="position-absolute bg-white border rounded" style={{ top: "100%", left: 0, width: "100%", zIndex: 10 }}>
+                                <Box className="p-2">Dubai</Box>
+                                <Box className="p-2">London</Box>
+                                <Box className="p-2">New York</Box>
+                            </Box>
+                        )}
                     </Box>
 
-                    <Card className='border border-1 border-secondary-subtle'>
-                        <Box><Typography className='fw-bold p-2'>
-                            Filter by:
-                        </Typography></Box>
-                        <hr></hr>
-                        <Typography className='fw-bold p-2'>
-                            Your previous filters
-                        </Typography>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Wonderful: 9+</span>
+                    <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
 
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <Stack direction="row" spacing={2}>
+                                <DatePicker
+                                    value={value}
+                                    onChange={(newValue) => setValue(newValue)}
+                                />
+                            </Stack>
+                        </LocalizationProvider>
+                    </Box>
 
+                    <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
+                        <Person2Icon />
+                        <input
+                            type="text"
+                            placeholder="2 adults - 0 children - 1 room"
+                            className="form-control border-0"
+                            style={{ width: "100%", outline: "none", boxShadow: "none" }}
+                            value={guestInfo}
+                            onFocus={() => setShowGuestModal(true)}
+                            onBlur={() => setTimeout(() => setShowGuestModal(false), 200)}
+                        />
+                        {showGuestModal && (
+                            <Box className="position-absolute bg-white border rounded p-3" style={{ top: "100%", left: 0, width: "300px", zIndex: 10 }}>
+                                <Box className="d-flex justify-content-between align-items-center mb-2">
+                                    <span>Adults</span>
+                                    <input type="number" className="form-control w-25" defaultValue={2} />
+                                </Box>
+                                <Box className="d-flex justify-content-between align-items-center mb-2">
+                                    <span>Children</span>
+                                    <input type="number" className="form-control w-25" defaultValue={0} />
+                                </Box>
+                                <Box className="d-flex justify-content-between align-items-center">
+                                    <span>Rooms</span>
+                                    <input type="number" className="form-control w-25" defaultValue={1} />
+                                </Box>
                             </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    197
-                                </Typography>
-                            </Box>
-                        </Box>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Hotels</span>
+                        )}
+                    </Box>
 
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    116
-                                </Typography>
-                            </Box>
-
-
-
-                        </Box>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Villas</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    12
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                    </Card>
-
-
-
-
-
-
-                    <Card className='border border-1 border-secondary-subtle'>
-
-                        <Typography className='fw-bold p-2'>
-                            Your previous filters
-                        </Typography>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Wonderful: 9+</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    197
-                                </Typography>
-                            </Box>
-                        </Box>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Airport shuttle</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    166
-                                </Typography>
-                            </Box>
-                        </Box>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Apartments</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    127
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free cancellation</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    155
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Guesthouses</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                   222
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Parking</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    100
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free wifi</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    184
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free Breakfast</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    105
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Double Bed</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    105
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        
-
-                    </Card>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <Card className='border border-1 border-secondary-subtle'>
-
-                        <Typography className='fw-bold p-2'>
-                            Your previous filters
-                        </Typography>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Wonderful: 9+</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    197
-                                </Typography>
-                            </Box>
-                        </Box>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Entire homes & apartments
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    297
-                                </Typography>
-                            </Box>
-                        </Box>
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Apartments</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    97
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Guesthouses</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    266
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Bed and Breakfasts</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    30
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Kitchen facilities</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    30-0
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>All-inclusive</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    90
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Sea view</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    23
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Private bathroom</span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    11
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-
-                        
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Air conditioning
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    101
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Balcony
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    8
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Pool
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    2
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Generator
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    20
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Television
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    21
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free call service
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    921
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free dusting
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    786
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free card service 
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    110
-                                </Typography>
-                            </Box>
-                        </Box>
-
-
-                        
-                        <Box className='d-flex justify-content-between '>
-                            <Box className='ps-2'>
-                                <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Material
-                                </span>
-
-
-                            </Box>
-                            <Box className='text-center '>
-                                <Typography className='text-center mt-2 pe-2' >
-                                    553
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                    </Card>
-
-
-
-
-
-
-
-
-
-
-
-                    
+                    <button className="btn btn-primary translate-middle-y text-center fw-bold border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12">Search</button>
                 </Box>
-                <Box className='col-lg-9 col-md-9 col-sm-12' >
-                    <Typography className='fw-bold'>Kalām: 4 properties found</Typography>
+            </Box>
 
-                    <Box className='d-flex gap-2'>
-                        <Box className="nav-link active  py-1 px-1 text-center text-primary border border-1 border-primary   rounded-5">
-                            <a style={{ fontSize: "14px" }} className='text-primary fw-medium ms-1  text-center px-1 text-decoration-none w-25  '
-                                href="#" >PKR 2,000 – PKR 25,000 (per night)</a>
+
+
+            <Box className='container'>
+                <Stack spacing={2}>
+
+                    <Breadcrumbs
+                        separator={<NavigateNextIcon fontSize="10" />}
+                        aria-label="breadcrumb"
+                    >
+                        {breadcrumbs}
+                    </Breadcrumbs>
+                </Stack>
+            </Box>
+
+
+            <Box className='container'>
+                <Box className='row'>
+                    <Box className='col-lg-3 col-md-3 col-sm-12 d-none d-lg-block d-md-block'>
+
+
+
+
+                        <Box className="position-relative mt-2 ">
+                            <iframe className='rounded-2' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.824470487258!2d73.10539277479822!3d33.713490635543025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfc0697d15d10d%3A0x1aaf6f84f1af44a4!2sOne%20Constitution%20Avenue!5e0!3m2!1sen!2s!4v1738765511573!5m2!1sen!2s" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <Button variant='contained' size='small' className='w-75 position-absolute top-50 mt-5 start-50 translate-middle '>Show on the map</Button>
+
                         </Box>
-                        <Box className="nav-link active  py-1  text-center text-primary border border-1 border-primary   rounded-5">
-                            <a style={{ fontSize: "14px" }} className='text-primary fw-medium ms-1  text-center px-1 text-decoration-none w-25  '
-                                href="#" >Wonderful: 9+</a>
-                        </Box>
-                    </Box>
+
+                        <Card className='border border-1 border-secondary-subtle'>
+                            <Box><Typography className='fw-bold p-2'>
+                                Filter by:
+                            </Typography></Box>
+                            <hr></hr>
+                            <Typography className='fw-bold p-2'>
+                                Your previous filters
+                            </Typography>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Wonderful: 9+</span>
 
 
-                    <Box className='mt-3 '>
-                        {hotels.map((hotel, index) => (
-                            <Card key={index} className='border border-1 p-1 rounded-2 mt-3 pb-3'>
-                                <Box className='container-fluid'>
-                                    <Box className='row'>
-
-                                        <Box className='col-lg-4 col-md-2 col-sm-12  '>
-                                            <img width={270} className='p-2 rounded-4' src={hotel.image} alt="" />
-                                        </Box>
-                                        <Box className='col-lg-5 col-md-7 col-sm-12'>
-
-                                            <Box >
-                                                <Typography variant="h6" fontWeight="bold" color="primary">
-                                                    {hotel.name}       <Chip label="Featured" className='text-center border border-black fw-normal pt-1 rounded-1 ' size="small" />
-
-                                                </Typography>
-
-                                                <Box display="flex" alignItems="center" gap={1}>
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        197
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Hotels</span>
 
 
-                                                </Box>
-                                                <Typography variant="body2" color="textSecondary">
-                                                    {hotel.location} - {hotel.distance}
-                                                </Typography>
-                                                <Chip className='text-center rounded-1 ' label={hotel.deal} color="success" size="small" />
-
-                                                <Typography fontSize={14} fontWeight="bold" mt={1}>
-                                                    {hotel.description}
-                                                </Typography>
-                                                <Typography fontSize={12} >
-                                                    {hotel.RoomDetails}
-                                                </Typography>
-
-                                                <Typography fontSize={12}>
-                                                    {hotel.bedType}
-                                                </Typography>
-                                                <Typography className='fw-semibold' fontSize={12} color="success">{hotel.breakfast}</Typography>
-
-                                                <Typography className='fw-semibold' fontSize={12} color="success">{hotel.cancellation}</Typography>
-                                                <Typography fontSize={12} color="success"><span className='fw-semibold'>{hotel.noPrepaymentNeeded}</span> - {hotel.payAtProperty}</Typography>
-                                                <Typography fontSize={12} color="error" fontWeight="bold">
-                                                    Only {hotel.availableRooms} left at this price!
-                                                </Typography>
-                                            </Box>
-
-
-                                        </Box>
-
-                                        <Box className='col-lg-3 col-md-3 col-sm-12 text-end d-flex flex-column justify-content-between'>
-                                            <Box>
-                                                <Typography color='primary' className='fw-bold px-1'>
-                                                    Exceptional
-                                                    <Chip label={hotel.rating} className='bg-primary text-white ms-1' size="small" />
-                                                </Typography>
-                                                <Typography fontSize={12} color="textSecondary">
-                                                    {hotel.reviews} real reviews
-                                                </Typography>
-                                                <Chip label={`Location ${hotel.rating}`} className='text-primary rounded-1' size="small" />
-
-                                            </Box>
-                                            <Typography>
-                                                <Chip label={`New to Booking.com`} className=' rounded-1 bg-warning text-black' size="small" />
-
-                                            </Typography>
-
-                                            <Box mt={2}>
-                                                <Typography fontSize={14}>
-                                                    {hotel.duration}
-                                                </Typography>
-                                                <Typography fontSize={12} className="text-decoration-line-through text-danger">
-                                                    PKR {hotel.price.original}
-                                                </Typography>
-                                                <Typography variant="h6" className='fw-bold '>
-                                                    PKR {hotel.price.discounted}
-                                                </Typography>
-                                                <Typography fontSize={12} color="textSecondary">
-                                                    + PKR {hotel.price.taxesAndFees} taxes and fees
-                                                </Typography>
-                                            </Box>
-
-                                            <Button variant="contained" className='bg-primary text-white mt-2'>
-                                                {hotel.availability}
-                                            </Button>
-                                        </Box>
-
-                                    </Box>
-
-
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        116
+                                    </Typography>
                                 </Box>
 
 
 
-                            </Card>
-                        ))}
+                            </Box>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Villas</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        12
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                        </Card>
+
+
+
+
+
+
+                        <Card className='border border-1 border-secondary-subtle'>
+
+                            <Typography className='fw-bold p-2'>
+                                Your previous filters
+                            </Typography>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Wonderful: 9+</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        197
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Airport shuttle</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        166
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Apartments</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        127
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free cancellation</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        155
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Guesthouses</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        222
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Parking</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        100
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free wifi</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        184
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free Breakfast</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        105
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Double Bed</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        105
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+
+
+                        </Card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <Card className='border border-1 border-secondary-subtle'>
+
+                            <Typography className='fw-bold p-2'>
+                                Your previous filters
+                            </Typography>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Wonderful: 9+</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        197
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Entire homes & apartments
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        297
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Apartments</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        97
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Guesthouses</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        266
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Bed and Breakfasts</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        30
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Kitchen facilities</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        30-0
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>All-inclusive</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        90
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Sea view</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        23
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Private bathroom</span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        11
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Air conditioning
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        101
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Balcony
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        8
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Pool
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        2
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Generator
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        20
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Television
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        21
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free call service
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        921
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free dusting
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        786
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Free card service
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        110
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+
+
+                            <Box className='d-flex justify-content-between '>
+                                <Box className='ps-2'>
+                                    <FormControlLabel control={<Checkbox />} label="" /><span className=' mt-2'>Material
+                                    </span>
+
+
+                                </Box>
+                                <Box className='text-center '>
+                                    <Typography className='text-center mt-2 pe-2' >
+                                        553
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                        </Card>
+
+
+
+
+
+
+
+
+
+
+
+
                     </Box>
+                    <Box className='col-lg-9 col-md-9 col-sm-12' >
+                        <Typography className='fw-bold'>Kalām: 4 properties found</Typography>
+
+                        <Box className='d-flex gap-2'>
+                            <Box className="nav-link active  py-1 px-1 text-center text-primary border border-1 border-primary   rounded-5">
+                                <a style={{ fontSize: "14px" }} className='text-primary fw-medium ms-1  text-center px-1 text-decoration-none w-25  '
+                                    href="#" >PKR 2,000 – PKR 25,000 (per night)</a>
+                            </Box>
+                            <Box className="nav-link active  py-1  text-center text-primary border border-1 border-primary   rounded-5">
+                                <a style={{ fontSize: "14px" }} className='text-primary fw-medium ms-1  text-center px-1 text-decoration-none w-25  '
+                                    href="#" >Wonderful: 9+</a>
+                            </Box>
+                        </Box>
+
+
+                        <Box className='mt-3 '>
+                            {hotels.map((hotel, index) => (
+                                <Card key={hotels.id} className='border border-1 p-1 rounded-2 mt-3 pb-3'>
+                                    <Box className='container-fluid'>
+                                        <Box className='row'>
+
+                                            <Box className='col-lg-4 col-md-2 col-sm-12  '>
+                                                <img width={270} className='p-2 rounded-4' src={hotel.image} alt="" />
+                                            </Box>
+                                            <Box className='col-lg-5 col-md-7 col-sm-12'>
+
+                                                <Box >
+                                                    <Typography variant="h6" fontWeight="bold" color="primary">
+                                                        {hotel.name}       <Chip label="Featured" className='text-center border border-black fw-normal pt-1 rounded-1 ' size="small" />
+
+                                                    </Typography>
+
+                                                    <Box display="flex" alignItems="center" gap={1}>
+
+
+                                                    </Box>
+                                                    <Typography variant="body2" color="textSecondary">
+                                                        {hotel.location} - {hotel.distance}
+                                                    </Typography>
+                                                    <Chip className='text-center rounded-1 ' label={hotel.deal} color="success" size="small" />
+
+                                                    <Typography fontSize={14} fontWeight="bold" mt={1}>
+                                                        {hotel.description}
+                                                    </Typography>
+                                                    <Typography fontSize={12} >
+                                                        {hotel.RoomDetails}
+                                                    </Typography>
+
+                                                    <Typography fontSize={12}>
+                                                        {hotel.bedType}
+                                                    </Typography>
+                                                    <Typography className='fw-semibold' fontSize={12} color="success">{hotel.breakfast}</Typography>
+
+                                                    <Typography className='fw-semibold' fontSize={12} color="success">{hotel.cancellation}</Typography>
+                                                    <Typography fontSize={12} color="success"><span className='fw-semibold'>{hotel.noPrepaymentNeeded}</span> - {hotel.payAtProperty}</Typography>
+                                                    <Typography fontSize={12} color="error" fontWeight="bold">
+                                                        Only {hotel.availableRooms} left at this price!
+                                                    </Typography>
+                                                </Box>
+
+
+                                            </Box>
+
+                                            <Box className='col-lg-3 col-md-3 col-sm-12 text-end d-flex flex-column justify-content-between'>
+                                                <Box>
+                                                    <Typography color='primary' className='fw-bold px-1'>
+                                                        Exceptional
+                                                        <Chip label={hotel.rating} className='bg-primary text-white ms-1' size="small" />
+                                                    </Typography>
+                                                    <Typography fontSize={12} color="textSecondary">
+                                                        {hotel.reviews} real reviews
+                                                    </Typography>
+                                                    <Chip label={`Location ${hotel.rating}`} className='text-primary rounded-1' size="small" />
+
+                                                </Box>
+                                                <Typography>
+                                                    <Chip label={`New to Booking.com`} className=' rounded-1 bg-warning text-black' size="small" />
+
+                                                </Typography>
+
+                                                <Box mt={2}>
+                                                    <Typography fontSize={14}>
+                                                        {hotel.duration}
+                                                    </Typography>
+                                                    <Typography fontSize={12} className="text-decoration-line-through text-danger">
+                                                        PKR {hotel.price.original}
+                                                    </Typography>
+                                                    <Typography variant="h6" className='fw-bold '>
+                                                        PKR {hotel.price.discounted}
+                                                    </Typography>
+                                                    <Typography fontSize={12} color="textSecondary">
+                                                        + PKR {hotel.price.taxesAndFees} taxes and fees
+                                                    </Typography>
+                                                </Box>
+                                                <Link to={`/availability/${hotel.id}`}>
+                                                    <Button variant="contained" className='bg-primary text-white mt-2'>
+                                                        {hotel.availability}
+                                                    </Button>
+                                                </Link>
+                                            </Box>
+
+                                        </Box>
+
+
+                                    </Box>
+
+
+
+                                </Card>
+                            ))}
+                        </Box>
+                    </Box>
+
+
+
                 </Box>
-
-
-
             </Box>
-        </Box>
         </Box>
     </>
 }

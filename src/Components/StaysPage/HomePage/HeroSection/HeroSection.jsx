@@ -1,5 +1,5 @@
 import { Autocomplete, Box, Card, Checkbox, Container, FormControlLabel, List, ListItem, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import KingBedOutlinedIcon from '@mui/icons-material/KingBedOutlined';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Person2Icon from '@mui/icons-material/Person2';
@@ -52,6 +52,8 @@ import Genius from "../../../../assets/images/Genius.png"
 import HalfCircle from "../../../../assets/images/half circle.png"
 import chair from "../../../../assets/images/chair.png"
 import { Link } from 'react-router';
+// import React, { useState, useEffect } from "react";
+import { Modal } from "@mui/material";
 
 
 
@@ -257,9 +259,55 @@ const HeroSection = () => {
   ];
 
 
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(true);
+  }, []);
+
+  const handleClose = () => setOpen(false);
 
 
   return <>
+
+    <Modal open={open} onClose={handleClose}>
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 380,
+          bgcolor: "background.paper",
+          boxShadow: 24,
+          p: 3,
+          borderRadius: 2,
+          textAlign: "center",
+        }}
+      >
+        <Typography className='fw-bold ' variant="h6" >
+          Welcome to <span className=' text-primary'>Booking.com!</span>
+        </Typography>
+        <Box>
+          <img className='w-25' src={Genius} alt="" />
+        </Box>
+        <Typography className='fw-bold' variant="h6" sx={{ mt: 1, mb: 2 }}>
+          All your trip details in one place
+          <br />
+          <Typography className='fw-bold' variant="body2" sx={{ mt: 1, mb: 2 }}>
+            To book faster and manage your <br /> trip with ease
+          </Typography>
+        </Typography>
+
+        <Button onClick={close} variant="contained" color="primary" fullWidth sx={{ mb: 1 }}>
+         Let's go 
+        </Button>
+
+      </Box>
+    </Modal>
+
+
+
 
     <Box className="bg-primary pb-5 ">
       <Box className="container pb-4">
@@ -302,13 +350,13 @@ const HeroSection = () => {
           )}
         </Box>
 
-        <Box  className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
+        <Box className="translate-middle-y bg-white d-flex align-items-center border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12 d-none d-lg-block d-md-block">
 
-          <LocalizationProvider  dateAdapter={AdapterDayjs}>
-            <Stack sx={{width:"100%"}} direction="row" spacing={2}>
+          <LocalizationProvider variant="small" dateAdapter={AdapterDayjs}>
+            <Stack sx={{ width: "100%", }} direction="row" spacing={2}>
               <DatePicker
-              className='border-0' 
-              sx={{width:"100%",outlineColor:"none"}}
+                className=''
+                sx={{ width: "100%", "& fieldset": { border: "none" } }}
                 value={value}
                 onChange={(newValue) => setValue(newValue)}
               />
@@ -366,52 +414,52 @@ const HeroSection = () => {
         <Box className="row">
           <Box className=' col-lg-4 col-md-6 col-sm-12 col-xs-12 pt-4'>
 
-  <Link className='text-decoration-none' to="/HotelsDetailPage">
-  <Card className="d-flex  w-100  p-3 ">
+            <Link className='text-decoration-none' to="hotels-detail">
+              <Card className="d-flex  w-100  p-3 ">
 
 
-<img img-fluid style={{ width: "60px" }} className='img-fluid rounded-2' src={Dubai} />
-<Box className="d-flex flex-column justify-content-center ms-2" >
-  <Typography className='fs-6 fw-bold' >Dubai</Typography>
-  <Typography >
-    Jan 31-Feb 1, 2 people
-  </Typography>
-</Box>
-</Card>
-  </Link>
+                <img img-fluid style={{ width: "60px" }} className='img-fluid rounded-2' src={Dubai} />
+                <Box className="d-flex flex-column justify-content-center ms-2" >
+                  <Typography className='fs-6 fw-bold' >Dubai</Typography>
+                  <Typography >
+                    Jan 31-Feb 1, 2 people
+                  </Typography>
+                </Box>
+              </Card>
+            </Link>
 
 
           </Box>
           <Box className='col-lg-4 col-md-6 col-sm-12 col-xs-12 pt-4'>
-          <Link className='text-decoration-none' to="/HotelsDetailPage">
+            <Link className='text-decoration-none' to="hotels-detail">
 
-            <Card className="d-flex w-100 p-3">
+              <Card className="d-flex w-100 p-3">
 
 
-              <img className='  rounded-2' src={Skardu} />
-              <Box className="d-flex flex-column justify-content-center ms-2" >
-                <Typography className='fs-6 fw-bold' >Skardu</Typography>
-                <Typography >
-                  Jan 31-Feb 1, 2 people
-                </Typography>
-              </Box>
-            </Card>
+                <img className='  rounded-2' src={Skardu} />
+                <Box className="d-flex flex-column justify-content-center ms-2" >
+                  <Typography className='fs-6 fw-bold' >Skardu</Typography>
+                  <Typography >
+                    Jan 31-Feb 1, 2 people
+                  </Typography>
+                </Box>
+              </Card>
             </Link>
           </Box>
           <Box className='col-lg-4 col-md-6 col-sm-12 col-xs-1 pt-4'>
-          <Link className='text-decoration-none' to="/HotelsDetailPage">
+            <Link className='text-decoration-none' to="hotels-detail">
 
-            <Card className="d-flex  w-100 p-3">
+              <Card className="d-flex  w-100 p-3">
 
 
-              <img className='  rounded-2' src={Tokyo} />
-              <Box className="d-flex flex-column justify-content-center ms-2 " >
-                <Typography className='fs-6 fw-bold' >Tokyo</Typography>
-                <Typography className='' >
-                  Jan 31-Feb 1, 2 people
-                </Typography>
-              </Box>
-            </Card>
+                <img className='  rounded-2' src={Tokyo} />
+                <Box className="d-flex flex-column justify-content-center ms-2 " >
+                  <Typography className='fs-6 fw-bold' >Tokyo</Typography>
+                  <Typography className='' >
+                    Jan 31-Feb 1, 2 people
+                  </Typography>
+                </Box>
+              </Card>
             </Link>
           </Box>
         </Box>
@@ -481,38 +529,38 @@ const HeroSection = () => {
       </Typography>
 
 
-        <Box className=" "
-        >
-          <Box className="row " >
-            <Box style={{ width: "575px" }} className='  col-lg-6 col-md-6  '>
-              <img className='img-fluid rounded-3' src={trendingDubai} alt="" />
-            </Box>
-            <Box style={{ width: "565px" }} className='  col-lg-6 col-md-6'>
-              <img className='img-fluid  rounded-3' src={trendingAbuDhabi} alt="" />
-
-            </Box>
+      <Box className=" "
+      >
+        <Box className="row " >
+          <Box style={{ width: "575px" }} className='  col-lg-6 col-md-6  '>
+            <img className='img-fluid rounded-3' src={trendingDubai} alt="" />
           </Box>
+          <Box style={{ width: "565px" }} className='  col-lg-6 col-md-6'>
+            <img className='img-fluid  rounded-3' src={trendingAbuDhabi} alt="" />
 
-          <Box className='row mt-2'>
-            <Box style={{ width: "377px" }} className='col-lg-4 col-md-4 ms-1' >
-              <img className='img-fluid  rounded-3' src={trendingSharjah} alt="" />
+          </Box>
+        </Box>
 
-            </Box>
-
-            <Box style={{ width: "377px" }} className='col-lg-4 col-md-4' >
-              <img className='img-fluid  rounded-3' src={trendingIstanbol} alt="" />
-
-            </Box>
-
-            <Box style={{ width: "377px" }} className='col-lg-4 col-md-4 ' >
-              <img className='img-fluid  rounded-3' src={trendingParis} alt="" />
-
-            </Box>
+        <Box className='row mt-2'>
+          <Box style={{ width: "377px" }} className='col-lg-4 col-md-4 ms-1' >
+            <img className='img-fluid  rounded-3' src={trendingSharjah} alt="" />
 
           </Box>
 
+          <Box style={{ width: "377px" }} className='col-lg-4 col-md-4' >
+            <img className='img-fluid  rounded-3' src={trendingIstanbol} alt="" />
+
+          </Box>
+
+          <Box style={{ width: "377px" }} className='col-lg-4 col-md-4 ' >
+            <img className='img-fluid  rounded-3' src={trendingParis} alt="" />
+
+          </Box>
 
         </Box>
+
+
+      </Box>
     </Box>
 
     <Box className='container' >
@@ -537,7 +585,7 @@ const HeroSection = () => {
 
 
           },
-          '::-webkit-scrollbar': { display: 'none' }, // Hide scrollbar
+          '::-webkit-scrollbar': { display: 'none' },
         }}
 
 
@@ -556,36 +604,36 @@ const HeroSection = () => {
 
         >
           {cities.slice(0, 10).map((city) => (
-            <Link className='text-decoration-none' to="/HotelsDetailPage">
-            
-            <Box
-              style={{
-                border: '1px solid #ddd',
-                padding: 0,
-                margin: 0,
-                borderRadius: 8,
-                textAlign: 'center',
-                flex: '0 0 auto',
-                border: "none"
-              }}
+            <Link className='text-decoration-none' to="hotels-detail">
 
-              key={city.name}
-            >
+              <Box
+                style={{
+                  border: '1px solid #ddd',
+                  padding: 0,
+                  margin: 0,
+                  borderRadius: 8,
+                  textAlign: 'center',
+                  flex: '0 0 auto',
+                  border: "none"
+                }}
 
-              <img
-                src={city.img}
-                alt={city.img}
-                style={{ width: '100%', maxWidth: 165, minWidth: 165, borderRadius: 8 }}
-              />
+                key={city.name}
+              >
+
+                <img
+                  src={city.img}
+                  alt={city.img}
+                  style={{ width: '100%', maxWidth: 165, minWidth: 165, borderRadius: 8 }}
+                />
 
 
-              <Box>
+                <Box>
 
-                <Typography className='fs-6 fw-bold text-start mt-1 text-black' >{city.name}</Typography>
-                <Typography className='text-start text-secondary' style={{ fontSize: "12px" }}>{city.properties}</Typography>
+                  <Typography className='fs-6 fw-bold text-start mt-1 text-black' >{city.name}</Typography>
+                  <Typography className='text-start text-secondary' style={{ fontSize: "12px" }}>{city.properties}</Typography>
+                </Box>
+
               </Box>
-
-            </Box>
             </Link>
 
 
@@ -597,10 +645,9 @@ const HeroSection = () => {
 
 
     <Box className="container">
-      {/* Section Title */}
       <Typography className="fs-5 fw-bold mt-4">Deals for the weekend</Typography>
 
-      {/* Scrollable Carousel */}
+
       <Box
         sx={{
           display: "flex",
@@ -612,116 +659,112 @@ const HeroSection = () => {
           "& > *": {
             scrollSnapAlign: "center",
           },
-          "::-webkit-scrollbar": { display: "none" }, // Hide scrollbar
+          "::-webkit-scrollbar": { display: "none" },
         }}
       >
         {hotels.map((hotel, index) => (
-         
-       <Link className='text-decoration-none text-black' to="/HotelsDetailPage">
-         <Box
 
-            className=' rounded-2'
-            key={index}
-            sx={{
-              // border: "1px solid #ddd",
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-              borderRadius: 2,
-              flex: "0 0 auto",
-              minWidth: "220px",
-              minHeight: "310px",
-
-            }}
-          >
-            {/* Hotel Image */}
+          <Link className='text-decoration-none text-black' to="hotels-detail">
             <Box
-              component="img"
-              src={hotel.image}
-              alt={hotel.name}
-              sx={{
-                width: "100%",
-                height: "155px",
-                objectFit: "cover",
-                borderRadius: "8px",
-              }}
-            />
 
-            {/* Button Tag */}
-            <Button
-              className='text-start mt-1 ms-1 text-white'
-              variant="contained"
-              size="small"
+              className=' rounded-2'
+              key={index}
               sx={{
-                backgroundColor: "#0071c2",
-                fontSize: "8px",
+                // border: "1px solid #ddd",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+                borderRadius: 2,
+                flex: "0 0 auto",
+                minWidth: "220px",
+                minHeight: "310px",
+
               }}
             >
-              {hotel.buttonText}
-            </Button>
+              <Box
+                component="img"
+                src={hotel.image}
+                alt={hotel.name}
+                sx={{
+                  width: "100%",
+                  height: "155px",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                }}
+              />
 
-            {/* Hotel Details */}
-            <Box className='mt-1 text-start ms-1'>
-              <Typography
-
-                style={{ fontSize: "13px" }} className="fw-bolder"
+              <Button
+                className='text-start mt-1 ms-1 text-white'
+                variant="contained"
+                size="small"
+                sx={{
+                  backgroundColor: "#0071c2",
+                  fontSize: "8px",
+                }}
               >
-                {hotel.name}
-              </Typography>
-              <Typography style={{ fontSize: "10px" }} className="fw-lighter" color="textSecondary">
-                {hotel.location}
-              </Typography>
+                {hotel.buttonText}
+              </Button>
 
-              <Typography className='d-flex'>
+              <Box className='mt-1 text-start ms-1'>
+                <Typography
 
-
-                <Typography width={20} className='bg-primary text-white px-1 pt-1 fw-bold rounded-top rounded-end text-center' style={{ fontSize: "10px" }} variant="body2">
-                  {hotel.rating}
+                  style={{ fontSize: "13px" }} className="fw-bolder"
+                >
+                  {hotel.name}
                 </Typography>
-                <Typography style={{ fontSize: "10px" }} className="fw-lighter ms-2 d-flex justify-content-center align-items-center">{hotel.reviews}</Typography>
+                <Typography style={{ fontSize: "10px" }} className="fw-lighter" color="textSecondary">
+                  {hotel.location}
+                </Typography>
 
-              </Typography>
+                <Typography className='d-flex'>
 
-            </Box>
 
-            {/* Pricing Details */}
-            <Box className='mt-1 text-start ms-1'>
-              {hotel.deal && (
+                  <Typography width={20} className='bg-primary text-white px-1 pt-1 fw-bold rounded-top rounded-end text-center' style={{ fontSize: "10px" }} variant="body2">
+                    {hotel.rating}
+                  </Typography>
+                  <Typography style={{ fontSize: "10px" }} className="fw-lighter ms-2 d-flex justify-content-center align-items-center">{hotel.reviews}</Typography>
+
+                </Typography>
+
+              </Box>
+
+              <Box className='mt-1 text-start ms-1'>
+                {hotel.deal && (
+                  <Typography
+                    style={{ fontSize: "9px" }}
+                    className='bg-success text-white p-1 rounded-1 fw-light'
+                    variant="caption"
+                    color="success.main"
+                    fontWeight="bold"
+                  >
+                    {hotel.deal}
+                  </Typography>
+                )}
+
+
+              </Box>
+              <Box className='d-flex justify-content-end  ' >
+
                 <Typography
                   style={{ fontSize: "9px" }}
-                  className='bg-success text-white p-1 rounded-1 fw-light'
-                  variant="caption"
-                  color="success.main"
-                  fontWeight="bold"
+
                 >
-                  {hotel.deal}
+                  {hotel.nights} nights for{" "}
+                  <del
+                    style={{ fontSize: "12px" }}
+
+                    className='text-danger '>Rs. {hotel.originalPrice.toLocaleString()}</del>
                 </Typography>
-              )}
 
+                <Typography
 
-            </Box>
-            <Box className='d-flex justify-content-end  ' >
-
-              <Typography
-                style={{ fontSize: "9px" }}
-
-              >
-                {hotel.nights} nights for{" "}
-                <del
                   style={{ fontSize: "12px" }}
+                  className='fw-bold text-dark ms-2 align-bottom align-text-bottom     ' color="primary">
+                  PKR {hotel.discountedPrice.toLocaleString()}
+                </Typography>
+              </Box>
 
-                  className='text-danger '>Rs. {hotel.originalPrice.toLocaleString()}</del>
-              </Typography>
-
-              <Typography
-
-                style={{ fontSize: "12px" }}
-                className='fw-bold text-dark ms-2 align-bottom align-text-bottom     ' color="primary">
-                PKR {hotel.discountedPrice.toLocaleString()}
-              </Typography>
             </Box>
 
-          </Box>
-       
-       </Link>
+          </Link>
 
         ))}
       </Box>
@@ -747,59 +790,63 @@ const HeroSection = () => {
           "& > *": {
             scrollSnapAlign: "center",
           },
-          "::-webkit-scrollbar": { display: "none" }, // Hide scrollbar
+          "::-webkit-scrollbar": { display: "none" },
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            gap: 2,
-            flexWrap: "nowrap",
-            overflowX: "auto",
-            width: "100%",
-            "::-webkit-scrollbar": { display: "none" },
-          }}
-        >
-          {destinations.map((destination, index) => (
-            <Box
-              key={index}
-              className={`col-lg-${index === 0 ? "6" : "3"} col-md-${index === 0 ? "6" : "3"} col-${index === 0 ? "12" : "8"}`} // Large screen pe first item 6 col, baqi 3 col, small screen pe full width
-              sx={{
-                padding: 0,
-                margin: 0,
-                borderRadius: 8,
-                textAlign: "center",
-                flex: "0 0 auto",
-                border: "none",
-              }}
-            >
-              <img
-                className="img-fluid  w-100"
-                src={destination.image}
-                alt={destination.title}
-                style={{
-                  // height: index === 0 ? "300px" : "180px",
-                  objectFit: "cover",
-                  borderRadius: "8px",
+        <Link className='text-decoration-none text-black' to="hotels-detail">
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+              flexWrap: "nowrap",
+              overflowX: "auto",
+              width: "100%",
+              "::-webkit-scrollbar": { display: "none" },
+            }}
+          >
+
+            {destinations.map((destination, index) => (
+
+              <Box
+                key={index}
+                className={`col-lg-${index === 0 ? "6" : "3"} col-md-${index === 0 ? "6" : "3"} col-${index === 0 ? "12" : "8"}`} // Large screen pe first item 6 col, baqi 3 col, small screen pe full width
+                sx={{
+                  padding: 0,
+                  margin: 0,
+                  borderRadius: 8,
+                  textAlign: "center",
+                  flex: "0 0 auto",
+                  border: "none",
                 }}
-              />
-              <Box>
-                <Typography
-                  className="fs-6 fw-bold text-start mt-2"
-                  style={{ fontSize: "14px" }}
-                >
-                  {destination.title}
-                </Typography>
-                <Typography
-                  className="text-start"
-                  style={{ fontSize: "12px", color: "#555" }}
-                >
-                  {destination.subtitle}
-                </Typography>
+              >
+                <img
+                  className="img-fluid  w-100"
+                  src={destination.image}
+                  alt={destination.title}
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                  }}
+                />
+                <Box>
+                  <Typography
+                    className="fs-6 fw-bold text-start mt-2"
+                    style={{ fontSize: "14px" }}
+                  >
+                    {destination.title}
+                  </Typography>
+                  <Typography
+                    className="text-start"
+                    style={{ fontSize: "12px", color: "#555" }}
+                  >
+                    {destination.subtitle}
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
-          ))}
-        </Box>
+            ))}
+          </Box>
+        </Link>
+
       </Box>
     </Box>
 
@@ -853,110 +900,110 @@ const HeroSection = () => {
     </Box>
 
 
-   <Link className='text-decoration-none' to="/HotelsDetailPage">
+    <Link className='text-decoration-none' to="hotels-detail">
 
-   <Card className='mt-5 container'>
+      <Card className='mt-5 container'>
 
-<Box className='container'>
-  <Box className='row'>
+        <Box className='container'>
+          <Box className='row'>
 
-    <Box className='col-lg-1 col-md-1 col-sm-12 mt-5 d-flex  align-items-center text-start'>
-      <Box className=''><img width={50} src={HalfCircle} alt="" /></Box>
+            <Box className='col-lg-1 col-md-1 col-sm-12 mt-5 d-flex  align-items-center text-start'>
+              <Box className=''><img width={50} src={HalfCircle} alt="" /></Box>
 
-    </Box>
-
-
-    <Box className='col-lg-6 col-md-8 col-sm-12 text-center '>
-
-      <Box style={{ paddingBottom: "80px", paddingTop: "80px" }} className='text-center  bg-primary rounded-start-pill rounded-end-pill  '>
-        <Typography className='fs-4 fw-bolder me-4 text-white mb-2'>Find
-          apartments
-          <br />
-          for your next trip
-
-        </Typography>
-
-        <Box><Button className='bg-white text-primary fw-bold  px-5'>Discover homes</Button></Box>
-
-      </Box>
-    </Box>
-
-    <Box className='col-lg-4 col-md-4 col-sm-12 img-fluid d-flex  align-items-center text-center '>
-      <img style={{ width: "100%" }} src={chair} alt="" />
-    </Box>
-
-  </Box>
+            </Box>
 
 
-</Box>
+            <Box className='col-lg-6 col-md-8 col-sm-12 text-center '>
 
-</Card>
-   </Link>
+              <Box style={{ paddingBottom: "80px", paddingTop: "80px" }} className='text-center  bg-primary rounded-start-pill rounded-end-pill  '>
+                <Typography className='fs-4 fw-bolder me-4 text-white mb-2'>Find
+                  apartments
+                  <br />
+                  for your next trip
 
+                </Typography>
 
+                <Box><Button className='bg-white text-primary fw-bold  px-5'>Discover homes</Button></Box>
 
-<Box className='container mt-5'>
-<Typography className='fw-bold fs-4'>
-Popular with travelers from Pakistan
-</Typography>
-<Box>
-<Box
-        sx={{
-          display: "flex ", // Show carousel only on small screens
-          gap: 2,
-          padding:"10px",
-          paddingBottom:"15px",
-          paddingTop:"15px",
-       alignItems:"center",
-          overflowX: 'auto', // Enables horizontal scrolling
-          width: '100%',
-          // backgroundColor:"#0D6EFD",
-          scrollSnapType: 'x mandatory',
-          '& > *': {
-            scrollSnapAlign: 'center',
-            display: 'flex', // Ensure items are in line for horizontal scrolling
-            marginRight: 1, // Spacing between items
-          },
-          '::-webkit-scrollbar': { display: 'none' }, // Hide scrollbar
-        }}
-      >
-        <div  className="  px-4 py-2 text-primary border border-1 border-primary  rounded-5">
-        <a style={{fontSize:"14px"}} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
-           <span className='d-none d-lg-block d-md-block'>Domestic cities </span>
-           <span className=' d-lg-none d-md-none d-sm-block'>Domestic </span>
+              </Box>
+            </Box>
 
-        </a>
-        </div>
+            <Box className='col-lg-4 col-md-4 col-sm-12 img-fluid d-flex  align-items-center text-center '>
+              <img style={{ width: "100%" }} src={chair} alt="" />
+            </Box>
 
-        <div className="nav-link active px-4 py-2 text-primary border border-1 border-primary  rounded-5">
-        <a style={{fontSize:"14px"}} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
-           
-           <span className='d-none d-lg-block d-md-block'>International cities </span>
-           <span className=' d-lg-none d-md-none d-sm-block'>International </span>
-        </a>
-        </div>
+          </Box>
 
 
-        <div className="nav-link active px-4 py-2 text-primary border border-1 border-primary  rounded-5">
-        <a style={{fontSize:"14px"}} className='text-primary fw-medium ms-1 text-center text-center  text-decoration-none  '
-         href="#" >Regions</a>
-        </div>
+        </Box>
 
-
-        <div className="nav-link active px-4 py-2 text-primary border border-1 border-primary  rounded-5">
-        <a style={{fontSize:"14px"}} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
-           Countries
-        </a>
-        </div>
-
-
-        <div className="nav-link active px-4 py-2 text-primary border border-1 border-primary  rounded-5">
-        <a style={{fontSize:"14px"}} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none d-flex  ' href="#" >                                                                                          Places                                                      </a>
-        </div>
+      </Card>
+    </Link>
 
 
 
-      </Box>
+    <Box className='container mt-5'>
+      <Typography className='fw-bold fs-4'>
+        Popular with travelers from Pakistan
+      </Typography>
+      <Box>
+        <Box
+          sx={{
+            display: "flex ",
+            gap: 2,
+            padding: "10px",
+            paddingBottom: "15px",
+            paddingTop: "15px",
+            alignItems: "center",
+            overflowX: 'auto',
+            width: '100%',
+            // backgroundColor:"#0D6EFD",
+            scrollSnapType: 'x mandatory',
+            '& > *': {
+              scrollSnapAlign: 'center',
+              display: 'flex',
+              marginRight: 1,
+            },
+            '::-webkit-scrollbar': { display: 'none' },
+          }}
+        >
+          <div className="  px-4 py-2 text-primary border border-1 border-primary  rounded-5">
+            <a style={{ fontSize: "14px" }} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
+              <span className='d-none d-lg-block d-md-block'>Domestic cities </span>
+              <span className=' d-lg-none d-md-none d-sm-block'>Domestic </span>
+
+            </a>
+          </div>
+
+          <div className="nav-link active px-4 py-2 text-primary border border-1 border-primary  rounded-5">
+            <a style={{ fontSize: "14px" }} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
+
+              <span className='d-none d-lg-block d-md-block'>International cities </span>
+              <span className=' d-lg-none d-md-none d-sm-block'>International </span>
+            </a>
+          </div>
+
+
+          <div className="nav-link active px-4 py-2 text-primary border border-1 border-primary  rounded-5">
+            <a style={{ fontSize: "14px" }} className='text-primary fw-medium ms-1 text-center text-center  text-decoration-none  '
+              href="#" >Regions</a>
+          </div>
+
+
+          <div className="nav-link active px-4 py-2 text-primary border border-1 border-primary  rounded-5">
+            <a style={{ fontSize: "14px" }} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
+              Countries
+            </a>
+          </div>
+
+
+          <div className="nav-link active px-4 py-2 text-primary border border-1 border-primary  rounded-5">
+            <a style={{ fontSize: "14px" }} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none d-flex  ' href="#" >                                                                                          Places                                                      </a>
+          </div>
+
+
+
+        </Box>
 
 
 
@@ -972,7 +1019,6 @@ Popular with travelers from Pakistan
           width: '100%',
           scrollSnapType: 'x mandatory',
           '& > *': {
-            // scrollSnapAlign: 'center',
 
 
           },
@@ -980,9 +1026,9 @@ Popular with travelers from Pakistan
         }} className='container'>
 
 
-<Box             sx={{
+          <Box sx={{
             // display: 'flex',
-            gap:1,
+            gap: 1,
             flexWrap: 'nowrap',
             overflowX: 'auto',
             width: '100%',
@@ -991,91 +1037,91 @@ Popular with travelers from Pakistan
 
           }} className='row'>
 
-          <List className=' col-lg-3 col-md-4 col-6 ms-3 '>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Islamabad Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Rawalpindi Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Peshawar Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Hyderabad Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Bahria Town Hotels</ListItem></Link>
-          </List>
-          <List className=' col-lg-3 col-md-4 col-6 '>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Lahore Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>MListtan Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>skardu Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Hunza Valley Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Ayubia Town Hotels</ListItem></Link>
-          </List>
-          <List className=' col-lg-3 col-md-4 col-6 '>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Karachi Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Faisalabd Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Gujranwala Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Malam Jabba Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Sialkot Hotels</ListItem></Link>
-          </List>
-          <List className=' col-lg-3 col-md-4 col-6 '>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Murree Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Kalam Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Swat Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Muzaffarabad Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Bahawalpur Hotels</ListItem></Link>
-          </List>
-          <List className=' col-lg-3 col-md-4 col-6 '>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Nathia GaListItem Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Naran Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Abbottabad Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Bhurban Hotels</ListItem></Link>
-            <Link className='text-decoration-none text-black' to="/HotelsDetailPage"><ListItem className=''>Mingora Hotels</ListItem></Link>
-          </List>
-          <List className=" col-lg-3 col-md-4 col-6 ">
-        <ListItem className="">Kāgān Hotels</ListItem>
-        <ListItem className="">Shogran Hotels</ListItem>
-        <ListItem className="">Bālākot Hotels</ListItem>
-        <ListItem className="">Mānsehra Hotels</ListItem>
-        <ListItem className="">Jhelum Hotels</ListItem>
-      </List>
+            <List className=' col-lg-3 col-md-4 col-6 ms-3 '>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Islamabad Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Rawalpindi Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Peshawar Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Hyderabad Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Bahria Town Hotels</ListItem></Link>
+            </List>
+            <List className=' col-lg-3 col-md-4 col-6 '>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Lahore Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>MListtan Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>skardu Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Hunza Valley Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Ayubia Town Hotels</ListItem></Link>
+            </List>
+            <List className=' col-lg-3 col-md-4 col-6 '>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Karachi Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Faisalabd Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Gujranwala Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Malam Jabba Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Sialkot Hotels</ListItem></Link>
+            </List>
+            <List className=' col-lg-3 col-md-4 col-6 '>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Murree Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Kalam Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Swat Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Muzaffarabad Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Bahawalpur Hotels</ListItem></Link>
+            </List>
+            <List className=' col-lg-3 col-md-4 col-6 '>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Nathia GaListItem Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Naran Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Abbottabad Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Bhurban Hotels</ListItem></Link>
+              <Link className='text-decoration-none text-black' to="hotels-detail"><ListItem className=''>Mingora Hotels</ListItem></Link>
+            </List>
+            <List className=" col-lg-3 col-md-4 col-6 ">
+              <ListItem className="">Kāgān Hotels</ListItem>
+              <ListItem className="">Shogran Hotels</ListItem>
+              <ListItem className="">Bālākot Hotels</ListItem>
+              <ListItem className="">Mānsehra Hotels</ListItem>
+              <ListItem className="">Jhelum Hotels</ListItem>
+            </List>
 
-      <List className=" col-lg-3 col-md-4 col-6 ">
-        <ListItem className="">Gujrāt Hotels</ListItem>
-        <ListItem className="">Quetta Hotels</ListItem>
-        <ListItem className="">Lower Topa Hotels</ListItem>
-        <ListItem className="">Gilgit Hotels</ListItem>
-        <ListItem className="">Khānspur Hotels</ListItem>
-      </List>
+            <List className=" col-lg-3 col-md-4 col-6 ">
+              <ListItem className="">Gujrāt Hotels</ListItem>
+              <ListItem className="">Quetta Hotels</ListItem>
+              <ListItem className="">Lower Topa Hotels</ListItem>
+              <ListItem className="">Gilgit Hotels</ListItem>
+              <ListItem className="">Khānspur Hotels</ListItem>
+            </List>
 
-      <List className=" col-lg-3 col-md-4 col-6 ">
-        <ListItem className="">Chitral Hotels</ListItem>
-        <ListItem className="">Sargodha Hotels</ListItem>
-        <ListItem className="">Rahimyar Khan Hotels</ListItem>
-        <ListItem className="">Dunga Gali Hotels</ListItem>
-        <ListItem className="">Karimabad Hunza Hotels</ListItem>
-      </List>
+            <List className=" col-lg-3 col-md-4 col-6 ">
+              <ListItem className="">Chitral Hotels</ListItem>
+              <ListItem className="">Sargodha Hotels</ListItem>
+              <ListItem className="">Rahimyar Khan Hotels</ListItem>
+              <ListItem className="">Dunga Gali Hotels</ListItem>
+              <ListItem className="">Karimabad Hunza Hotels</ListItem>
+            </List>
 
-      <List className=" col-lg-3 col-md-4 col-6 ">
-        <ListItem className="">Wāh Hotels</ListItem>
-        <ListItem className="">Thandiāni Hotels</ListItem>
-        <ListItem className="">Kawāi Hotels</ListItem>
-        <ListItem className="">Dina Hotels</ListItem>
-        <ListItem className="">University Town Hotels</ListItem>
-      </List>
+            <List className=" col-lg-3 col-md-4 col-6 ">
+              <ListItem className="">Wāh Hotels</ListItem>
+              <ListItem className="">Thandiāni Hotels</ListItem>
+              <ListItem className="">Kawāi Hotels</ListItem>
+              <ListItem className="">Dina Hotels</ListItem>
+              <ListItem className="">University Town Hotels</ListItem>
+            </List>
 
-      <List className=" col-lg-3 col-md-4 col-6 ">
-        <ListItem className="">Sāhīwāl Hotels</ListItem>
-        <ListItem className="">Mardan Hotels</ListItem>
-        <ListItem className="">Khanpur Hotels</ListItem>
-        <ListItem className="">Chāngla Gali Hotels</ListItem>
-        <ListItem className="">Astor Hotels</ListItem>
-      </List>
-      </Box>
+            <List className=" col-lg-3 col-md-4 col-6 ">
+              <ListItem className="">Sāhīwāl Hotels</ListItem>
+              <ListItem className="">Mardan Hotels</ListItem>
+              <ListItem className="">Khanpur Hotels</ListItem>
+              <ListItem className="">Chāngla Gali Hotels</ListItem>
+              <ListItem className="">Astor Hotels</ListItem>
+            </List>
+          </Box>
 
 
         </Box>
 
-</Box>
+      </Box>
 
-</Box>
+    </Box>
 
 
-  
+
   </>
 }
 

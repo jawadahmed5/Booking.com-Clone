@@ -361,7 +361,7 @@ const CarRentals = () => {
 
 
 
-        {/* Frequently Ask Question */}
+        {/* Frequently Ask Question of car rental pge */}
 
         <Box className='container mt-5 mb-5'>
             <Typography className='fs-3 fw-bold'>
@@ -543,7 +543,6 @@ const CarRentals = () => {
         </Box>
 
 
-        {/* Popular car rental destinations Section */}
 
 
         <Box className='container'>
@@ -572,7 +571,7 @@ const CarRentals = () => {
                 <Box className="row">
 
 
-                    {/* Yaha py map kara hai */}
+                    {/* Yaha py map kara hai arry ko car rentl poge ka */}
 
                     {carRentalLocations.map((rental, index) => (
                         <Box className="col-lg-4  col-12   mb-4" key={index}>
