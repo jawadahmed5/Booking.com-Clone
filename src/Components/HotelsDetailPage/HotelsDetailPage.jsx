@@ -344,77 +344,82 @@ const HotelsDetailPage = () => {
         <Box className='pb-5'>
             <SecondHeader />
 
-            <Box className="container ">
-                <Box
-                    className="row"
-                    style={{ gap: "" }}
-                >
-                    <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-3 col-md-6 col-sm-12">
-                        <KingBedOutlinedIcon />
-                        <input width={100}
+            <Box className="container">
+      <Box
+        className="row"
+        style={{ gap: "" }}
+      >
+        <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-3 col-md-6 col-sm-12">
+          <KingBedOutlinedIcon />
+          <input width={100}
 
-                            type="text"
-                            placeholder="Dubai"
-                            className="form-control  border-0 p-1"
-                            style={{ width: "100%", outline: "none", boxShadow: "none" }}
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                            onFocus={() => setShowCitySuggestions(true)}
-                            onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
-                        />
-                        {showCitySuggestions && (
-                            <Box className="position-absolute bg-white border rounded" style={{ top: "100%", left: 0, width: "100%", zIndex: 10 }}>
-                                <Box className="p-2">Dubai</Box>
-                                <Box className="p-2">London</Box>
-                                <Box className="p-2">New York</Box>
-                            </Box>
-                        )}
-                    </Box>
-
-                    <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
-
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <Stack direction="row" spacing={2}>
-                                <DatePicker
-                                    value={value}
-                                    onChange={(newValue) => setValue(newValue)}
-                                />
-                            </Stack>
-                        </LocalizationProvider>
-                    </Box>
-
-                    <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
-                        <Person2Icon />
-                        <input
-                            type="text"
-                            placeholder="2 adults - 0 children - 1 room"
-                            className="form-control border-0"
-                            style={{ width: "100%", outline: "none", boxShadow: "none" }}
-                            value={guestInfo}
-                            onFocus={() => setShowGuestModal(true)}
-                            onBlur={() => setTimeout(() => setShowGuestModal(false), 200)}
-                        />
-                        {showGuestModal && (
-                            <Box className="position-absolute bg-white border rounded p-3" style={{ top: "100%", left: 0, width: "300px", zIndex: 10 }}>
-                                <Box className="d-flex justify-content-between align-items-center mb-2">
-                                    <span>Adults</span>
-                                    <input type="number" className="form-control w-25" defaultValue={2} />
-                                </Box>
-                                <Box className="d-flex justify-content-between align-items-center mb-2">
-                                    <span>Children</span>
-                                    <input type="number" className="form-control w-25" defaultValue={0} />
-                                </Box>
-                                <Box className="d-flex justify-content-between align-items-center">
-                                    <span>Rooms</span>
-                                    <input type="number" className="form-control w-25" defaultValue={1} />
-                                </Box>
-                            </Box>
-                        )}
-                    </Box>
-
-                    <button className="btn btn-primary translate-middle-y text-center fw-bold border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12">Search</button>
-                </Box>
+            type="text"
+            placeholder="Dubai"
+            className="form-control  border-0 p-1"
+            style={{ width: "100%", outline: "none", boxShadow: "none" }}
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            onFocus={() => setShowCitySuggestions(true)}
+            onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
+          />
+          {showCitySuggestions && (
+            <Box className="position-absolute bg-white border rounded" style={{ top: "100%", left: 0, width: "100%", zIndex: 10 }}>
+              <Box className="p-2">Dubai</Box>
+              <Box className="p-2">London</Box>
+              <Box className="p-2">New York</Box>
             </Box>
+          )}
+        </Box>
+
+        <Box className="translate-middle-y bg-white d-flex align-items-center border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12 d-none d-lg-block d-md-block">
+
+          <LocalizationProvider variant="small" dateAdapter={AdapterDayjs}>
+            <Stack sx={{ width: "100%", }} direction="row" spacing={2}>
+              <DatePicker
+                className=''
+                sx={{ width: "100%", "& fieldset": { border: "none" } }}
+                value={value}
+                onChange={(newValue) => setValue(newValue)}
+              />
+            </Stack>
+          </LocalizationProvider>
+        </Box>
+
+        <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
+          <Person2Icon />
+          <input
+            type="text"
+            placeholder="2 adults - 0 children - 1 room"
+            className="form-control border-0"
+            style={{ width: "100%", outline: "none", boxShadow: "none" }}
+            value={guestInfo}
+            onFocus={() => setShowGuestModal(true)}
+            onBlur={() => setTimeout(() => setShowGuestModal(false), 200)}
+          />
+          {showGuestModal && (
+            <Box className="position-absolute bg-white border rounded p-3" style={{ top: "100%", left: 0, width: "300px", zIndex: 10 }}>
+              <Box className="d-flex justify-content-between align-items-center mb-2">
+                <span>Adults</span>
+                <input type="number" className="form-control w-25" defaultValue={2} />
+              </Box>
+              <Box className="d-flex justify-content-between align-items-center mb-2">
+                <span>Children</span>
+                <input type="number" className="form-control w-25" defaultValue={0} />
+              </Box>
+              <Box className="d-flex justify-content-between align-items-center">
+                <span>Rooms</span>
+                <input type="number" className="form-control w-25" defaultValue={1} />
+              </Box>
+            </Box>
+          )}
+        </Box>
+        
+        <Link className="btn btn-primary translate-middle-y   border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12" to="/hotels-detail">
+            <button className="bg-transparent text-white border-0 fw-bold text-center mt-lg-2" >Search</button>
+         </Link>
+        
+      </Box>
+    </Box>
 
 
 

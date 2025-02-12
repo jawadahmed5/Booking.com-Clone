@@ -211,23 +211,26 @@ const Footer = () => {
 
                 </Typography>
 
-                <Box className='d-flex justify-content-center container '>
-                    <Box className=''>
+            <Box className='container'>
+            <Box className='row text-center justify-content-center'>
+                    <Box className='col-lg-2 col-md-2 col-12  '>
                         <img width={100} src={bookingLogo} alt="" />
                     </Box>
-                    <Box className=''>
+                    <Box className='col-lg-2 col-md-2 col-12 '>
                         <img width={100} className='mt-3' src={PricelineLogo} alt="" />
                     </Box>
-                    <Box className=''>
+                    <Box className='col-lg-2 col-md-2 col-12 '>
                         <img width={100} src={KayakLogo} alt="" />
                     </Box>
-                    <Box className=''>
+                    <Box className='col-lg-2 col-md-2 col-12  bg-transperant'>
                         <img width={120} className='mt-3' src={AgodaLogo} alt="" />
                     </Box>
-                    <Box className=''>
-                        <img width={100} className='mt-4' src={OpensaveLogo} alt="" />
+                    <Box className='col-lg-2 col-md-2 col-12 '>
+                        <img width={100} className='mt-4 bg-transparent' src={OpensaveLogo} alt="" />
                     </Box>
                 </Box>
+
+            </Box>
             </Box>
 
 

@@ -27,7 +27,7 @@ const SecondHeader = () => {
           <Link to="/">
 
             <li className="nav-item  ">
-            <div style={{cursor:"pointer"}} className="nav-link active   py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
+            <div style={{cursor:"pointer"}} className="hoverItems nav-link active   py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
         <KingBedOutlinedIcon />
         <a style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
            Stays
@@ -43,7 +43,7 @@ const SecondHeader = () => {
 <Link to="/">
 
 <li className="nav-item  ">
-            <div style={{cursor:"pointer"}} className="nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
+            <div style={{cursor:"pointer"}} className="hoverItems nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
             <AirplaneTicketOutlinedIcon />
         <a style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
            Flights
@@ -57,7 +57,7 @@ const SecondHeader = () => {
    <Link to="/car-rentals">
          
             <li className="nav-item  ">
-            <div style={{cursor:"pointer"}} className="nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
+            <div style={{cursor:"pointer"}} className="hoverItems nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
             <DirectionsCarFilledOutlinedIcon /> 
         <a style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
         Car rentels
@@ -71,8 +71,11 @@ const SecondHeader = () => {
 <Button>hwllo</Button>
 
 </Link> */}
+
+
+<Link to="/">
    <li className="nav-item  ">
-            <div style={{cursor:"pointer"}} className="nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
+            <div style={{cursor:"pointer"}} className="hoverItems nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
             <AttractionsOutlinedIcon /> 
         <a style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
         Attractions
@@ -80,11 +83,13 @@ const SecondHeader = () => {
         </div>
 
             </li>
-   
+            </Link>
 
+
+            <Link to="/">
 
             <li className="nav-item  ">
-            <div className="nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
+            <div className="hoverItems nav-link active ms-2  py-0 px-3 pb-1 text-white border border-1 border-white  rounded-5">
             <LocalTaxiOutlinedIcon /> 
         <a style={{fontSize:"12px"}} className='text-white fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
         Airport taxis
@@ -92,7 +97,7 @@ const SecondHeader = () => {
         </div>
 
             </li>
-
+</Link>
             
             
            

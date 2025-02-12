@@ -88,6 +88,7 @@ const HeroSection = () => {
     { name: "Alanya", properties: "953 properties", img: TurkeyTen }
   ];
 
+
   const hotels = [
     {
       image: Deal1,
@@ -299,8 +300,8 @@ const HeroSection = () => {
           </Typography>
         </Typography>
 
-        <Button onClick={close} variant="contained" color="primary" fullWidth sx={{ mb: 1 }}>
-         Let's go 
+        <Button onClick={handleClose} variant="contained" color="primary" fullWidth sx={{ mb: 1 }}>
+          Let's go
         </Button>
 
       </Box>
@@ -392,8 +393,11 @@ const HeroSection = () => {
             </Box>
           )}
         </Box>
-
-        <button className="btn btn-primary translate-middle-y text-center fw-bold border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12">Search</button>
+        
+        <Link className="btn btn-primary translate-middle-y   border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12" to="/hotels-detail">
+            <button className="bg-transparent text-white border-0 fw-bold text-center mt-lg-2" >Search</button>
+         </Link>
+        
       </Box>
     </Box>
 
@@ -968,8 +972,8 @@ const HeroSection = () => {
           }}
         >
           <div className="  px-4 py-2 text-primary border border-1 border-primary  rounded-5">
-            <a style={{ fontSize: "14px" }} className='text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
-              <span className='d-none d-lg-block d-md-block'>Domestic cities </span>
+            <a style={{ fontSize: "14px" }} className=' text-primary fw-medium text-center ps-1 text-center  text-decoration-none  ' href="#" >
+              <span className='d-none d-lg-block d-md-block '>Domestic cities </span>
               <span className=' d-lg-none d-md-none d-sm-block'>Domestic </span>
 
             </a>

@@ -3,7 +3,7 @@ import country from "../../assets/images/flag.png"
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import SecondHeader from './SecondHeader';
 import { Link } from 'react-router';
-import { Box, Typography } from '@mui/material';
+import { Box, Tooltip, Typography } from '@mui/material';
 import Modal from '@mui/material/Modal';
 
 
@@ -14,7 +14,7 @@ const Header = () => {
   const currencies = [
     { name: "U.S. Dollar", code: "USD" },
     { name: "Euro", code: "EUR" },
-    { name: "United Arab Emirates Dirham", code: "AED" },
+    { name: "United Arab Emirates ", code: "AED" },
     { name: "Pound Sterling", code: "GBP" },
     { name: "Saudi Arabian Riyal", code: "SAR" },
     { name: "Thai Baht", code: "THB" },
@@ -126,11 +126,18 @@ const Header = () => {
 
 
 
-
+// Language modal
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+
+  // Currency Modal
+
+  const [currencyOpen, setCurrencyOpen] = useState(false);
+  const currencyHandleOpen = () => setCurrencyOpen(true);
+  const currencyHandleClose = () => setCurrencyOpen(false);
 
 
 
@@ -155,13 +162,22 @@ const Header = () => {
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <button onClick={handleOpen} style={{ fontSize: "14px" }} class="btn bg-transperant border-0 text-white  rounded-pill fw-medium  " >PKR</button>
+            <Tooltip className='bg-transparent border-0 text-white hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  ' title="Select your currency" >
+            <button onClick={currencyHandleOpen}  style={{ fontSize: "16px" }} class="hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  " >PKR</button>
+            </Tooltip>
+            <Tooltip className='bg-transparent border-0 text-white hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  '  title="Select your language" >
 
-            <button style={{ fontSize: "14px" }} class="btn border-0 bg-transperant  px-3  fw-medium  " ><img width={22} className='rounded-pill' img-fluid src={country} alt="" /></button>
-            <button style={{ fontSize: "14px" }} class="btn border-0 bg-transperant text-white  px-3   fw-medium " ><HelpOutlineOutlinedIcon /></button>
+            <button onClick={handleOpen} style={{ fontSize: "16px" }} class="hoverItems text-start btn border-0 bg-transperant  px-3  fw-medium  " ><img width={22} className='rounded-pill' img-fluid src={country} alt="" /></button>
+           </Tooltip>
+
+           <Tooltip className='bg-transparent border-0 text-white hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  ' title="Contact customer service" >
+
+            <button style={{ fontSize: "16px" }} class="hoverItems text-start btn border-0 bg-transperant text-white  px-3   fw-medium " ><HelpOutlineOutlinedIcon /></button>
+</Tooltip>
 
 
-            <button style={{ fontSize: "14px" }} class="btn bg-transperant border-0 text-white  rounded-pill fw-medium  " >List your property  </button>
+
+            <button style={{ fontSize: "16px" }} class="hoverItems text-start btn bg-transperant border-0 text-white me-1 fw-medium  " >List your property  </button>
 
 
 
@@ -197,7 +213,7 @@ const Header = () => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            
+
             bgcolor: 'background.paper',
             border: '2px solid #000',
             boxShadow: 24,
@@ -206,12 +222,27 @@ const Header = () => {
             height: 600
           }}>
             <div className='row  '>
+
+              <Typography className='fw-bold fs-4'>
+                Select your language
+
+
+              </Typography>
+
+              <Typography className='mt-5 fw-bold '>
+                All language
+
+
+              </Typography>
+
               {languages.map((country) => (
+
+
 
 
                 <div className='col-lg-3 col-md-4 col-sm-12 gy-3 '>
 
-                  <div className='d-flex bg-body-tertiary rounded-4  px-2 py-4'>
+                  <div  className='d-flex  country-box rounded-4 px-2 py-4'>
                     <div>
                       <img className='rounded-circle w-75 h-100' src={country.flag} alt="" />
 
@@ -246,6 +277,93 @@ const Header = () => {
         </Modal>
       </div>
 
+
+
+
+
+{/* CURRENCY MODAL */}
+      <div>
+        {/* <Button onClick={currencyHandleOpen}>Open modal</Button> */}
+        <Modal
+        open={currencyOpen}
+          onClose={currencyHandleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box className='w-75' sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+
+            bgcolor: 'background.paper',
+            border: '2px solid #000',
+            boxShadow: 24,
+            p: 4,
+            overflowY: "scroll",
+            height: 600
+          }}>
+            <div className='row  '>
+
+              <Typography className='fw-bold fs-4'>
+              Select your currency
+
+
+              </Typography>
+
+              
+              <Typography className='fs-7'>
+              Where applicable, prices will be converted to—and shown in—the currency you select. The currency you pay in may differ based on your reservation, and a service fee may also apply.
+
+
+              </Typography>
+
+              <Typography className='mt-5 fw-bold '>
+              All currencies
+
+
+              </Typography>
+
+              {currencies.map((currency) => (
+
+
+
+
+                <div className='col-lg-3 col-md-4 col-sm-12 gy-3 '>
+
+                  <div  className='d-flex  country-box rounded-3 py-2 px-1'>
+
+                    <div className='ms-3 '>
+                      <Typography className=' fs-6'>
+                        {currency.name}
+                      </Typography >
+                      <Typography sx={{fontSize:12}} className='fw-lighter pt-1 text-black-50'>
+                        {currency.code}
+                      </Typography>
+
+
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+              ))}
+            </div>
+
+
+
+          </Box>
+        </Modal>
+      </div>
 
 
 

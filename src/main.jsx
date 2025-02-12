@@ -12,6 +12,8 @@ import Register from './Components/Auth/RegisterPage/Register.jsx';
 import CarRentals from './Components/CarRentalsPage/CarRentals.jsx';
 import HotelsDetailPage from './Components/HotelsDetailPage/HotelsDetailPage.jsx';
 import Availability from './Components/AvailabilityPage/Availability.jsx';
+import NavbarSkeleton from './Components/Header/HeaderSkeleton.jsx';
+import SecondHeaderSkeleton from './Components/Header/SecondHeaderSkeleton.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,8 +26,11 @@ const router = createBrowserRouter([
       { path: "/car-rentals", element: <CarRentals /> },
       { path: "/hotels-detail", element: <HotelsDetailPage /> },
       { path: "/availability/:id", element: <Availability /> },
+      
     ],
   },
+  // {path: "/headerskeleton", element: <NavbarSkeleton />},
+  // {path:"/SecondHeaderSkeleton", element:<SecondHeaderSkeleton/>},
   { path: "/register", element: <Register /> },
   { path: "/signin", element: <Signin /> }
 ]);

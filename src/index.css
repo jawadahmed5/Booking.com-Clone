@@ -11,3 +11,19 @@
     font-weight: 300 !important;
 
 } */
+
+.country-box {
+    cursor: pointer;
+    background-color: #F0F6FD;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .country-box:hover {
+    background-color: lightgray !important;
+  }
+
+  .hoverItems:hover{
+    background-color:#0D47A1	
+    !important;
+
+  }
