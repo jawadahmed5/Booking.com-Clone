@@ -1,12 +1,11 @@
 import { AppBar, Box, Button, IconButton, TextField, Toolbar, Tooltip, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, Navigate, useNavigate } from 'react-router'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
 import GitHubIcon from '@mui/icons-material/GitHub';
-// import FacebookIcon from '@mui/icons-material/Facebook';
 import country from "../../../assets/images/flag.png"
 
 
@@ -14,11 +13,16 @@ const Signin = () => {
 
   const navigate = useNavigate()
   const { handleSubmit, register, formState: { errors } } = useForm()
+  const [errorMessage, setErrorMessage] = useState("");
+  const [secondErrorMessage, setSecondErrorMessage] = useState("");
   function submit(props) {
     const user = JSON.parse(localStorage.getItem("user"))
     if (user.email === props.email && user.password === props.password) {
       navigate("/")
     } else {
+
+      setErrorMessage("Your username or password is incorrect.");
+      setSecondErrorMessage("Sorry!")
 
     }
 
@@ -66,6 +70,14 @@ const Signin = () => {
             <Typography sx={{ fontSize: "14px" }} className='mt-3 '>
               You can sign in using your Booking.com account to<br /> access our services.
             </Typography>
+
+
+            {errorMessage && (
+        <div style={{width:"330px", paddingTop:"5px",paddingBottom:"5px"}} sx={{ width: "30px" }} size='small' className="alert alert-danger mt-2 text-center" role="alert">
+    {secondErrorMessage}<br/>      {errorMessage}
+        </div>
+      )}
+
             <Box className=' mt-2'>
               <Box className='text-start'>  <label className='fw-semibold  '>Email address</label><br /></Box>
 
@@ -110,9 +122,12 @@ const Signin = () => {
             <Typography sx={{ fontSize: '12px' }} className='text-center mt-3'>All rights reserved.<br />
               Copyright (2006-2025) – Booking.com™</Typography>
           </form>
+        
         </Box>
-
+     
       </Box>
+    
+    
     </>
   )
 }

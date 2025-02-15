@@ -166,21 +166,7 @@ const SecondHeader = () => {
         </a>
         </div>
 
-        {/* <a href="#" className="nav-link active pb-1 pt-0 px-3 text-white border border-1 border-white rounded-5 ms-1 nav-link">
-          <AirplaneTicketOutlinedIcon /> Flight
-        </a>
-        <a href="#" className="nav-link active pb-1 pt-0 px-3 text-white border border-1 border-white rounded-5 ms-1 nav-link">
-          <DirectionsCarFilledOutlinedIcon /> Cars
-        </a>
-        <a href="#" className="nav-link active pb-1 pt-0 px-3 text-white border border-1 border-white rounded-5 ms-1 nav-link">
-          <AttractionsOutlinedIcon /> Attractions
-        </a>
-        <li className="nav-item">
-              <a className="nav-link active pb-1 pt-0 px-3 text-white border border-1 border-white rounded-5 ms-1" href="#">
-                <LocalTaxiOutlinedIcon /> Airport Taxi's
-              </a>
-            </li> */}
-       
+              
       </Box>
     </>
   );

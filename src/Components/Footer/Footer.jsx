@@ -10,7 +10,6 @@ import AgodaLogo from "../../assets/images/agoda.jpg"
 import OpensaveLogo from "../../assets/images/openTable.jpg"
 
 
-// import Bookingcom from "../../assets/images/"
 
 const Footer = () => {
     return (
@@ -80,8 +79,6 @@ const Footer = () => {
                     </Box>
 
                 </Box>
-
-
 
 
 

@@ -860,46 +860,6 @@ const HeroSection = () => {
         Travel more, spend less
 
       </Typography>
-      {/* <Box className="container mt-3 border border-1 rounded-3">
-        <Box className='row' >
-
-          <Card className='col-lg-12 col-md-12 col-sm-12  '>
-            <Box className='d-flex justify-content-between  pt-2 pb-1 '>
-
-
-              <Box>
-                <Typography className='fs-6 fw-bold'>
-                  Sign in, save money
-
-                </Typography>
-                <Typography fontSize={12} className=' fw-light'>
-                  Save 10% or more at participating properties – just look for the blue Genius label
-
-
-                </Typography>
-                <Box className='mt-2'>
-
-                  <button style={{ fontSize: "12px" }} class="btn bg-primary py-1 px-2  text-white rounded-1 outline-primary me-2 fw-medium " >Sign in</button>
-                  <button style={{ fontSize: "12px" }} class="btn bg-white py-1 px-2  text-primary rounded-1 outline-primary  fw-medium" >Register</button>
-
-
-
-                </Box>
-
-
-              </Box>
-
-              <Box className='text-center d-flex flex-column justify-content-center'><img width={75} src={Genius} alt="" /></Box>
-
-            </Box>
-
-
-
-
-          </Card>
-
-        </Box>
-      </Box> */}
 
     </Box>
 

@@ -4,7 +4,6 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Card, CardContent, 
 import KingBedOutlinedIcon from '@mui/icons-material/KingBedOutlined';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Person2Icon from '@mui/icons-material/Person2';
-// import * as React from 'react';
 import { useLocalStorageState } from '@toolpad/core/useLocalStorageState';
 import dayjs from 'dayjs';
 import Stack from '@mui/material/Stack';
@@ -453,17 +452,6 @@ const CarRentals = () => {
                         </Accordion>
                     </Box>
 
-
-
-
-
-
-
-
-
-
-
-
                     <Box className=' col-lg-6 col-md-12 col-sm-12 '>
                         <Accordion className='border border-1 border-light-subtle rounded-1 py-2 my-2 border-bottom-0' >
                             <AccordionSummary className=''
@@ -540,10 +528,6 @@ const CarRentals = () => {
                         </Accordion>
                     </Box>
 
-
-
-
-
                 </Box>
             </Box>
         </Box>
@@ -614,19 +598,7 @@ const CarRentals = () => {
             </Box>
 
 
-
-
-
-
-
-
-
-
-
-
-
         </Box>
-
 
         <Box>
             <ul className='d-flex container justify-content-between d-none d-lg-flex d-md-flex'>

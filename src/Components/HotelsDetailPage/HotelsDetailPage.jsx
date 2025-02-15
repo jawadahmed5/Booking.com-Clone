@@ -53,33 +53,33 @@ const HotelsDetailPage = () => {
         console.info('You clicked a breadcrumb.');
     }
 
-
     const breadcrumbs = [
-        <Link sx={{ fontSize: "8px" }}
-            underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+        <Link to="/" sx={{ fontSize: "8px" }}
+            underline="hover" key="1" color="inherit"  onClick={handleClick}>
             Stays
         </Link>,
         <Link
-
+to="/"
             // className='fs-7'
             underline="hover"
             key="2"
             color="inherit"
-            href="/material-ui/getting-started/installation/"
+            // href="/src/Components/StaysPage/HomePage/HeroSection/HeroSection.jsx"
             onClick={handleClick}
         >
             Home
         </Link>,
 
         <Link
+        to="/hotels-detail"
             sx={{ fontSize: "10px" }}
 
             // className='fs-7'
             underline="hover"
             key="3"
             color="inherit"
-            //   href="/"
-            to="/Home"
+              href="/src/Components/HotelsDetailPage/HotelsDetailPage.jsx"
+            // to="/Home"
             onClick={handleClick}
         >
             Hotel Details
@@ -323,15 +323,6 @@ const HotelsDetailPage = () => {
     ];
 
     console.log(hotels);
-
-
-
-
-
-
-
-
-
 
 
 
@@ -914,13 +905,6 @@ const HotelsDetailPage = () => {
                             </Box>
 
                         </Card>
-
-
-
-
-
-
-
 
 
 
