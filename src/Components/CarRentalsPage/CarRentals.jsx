@@ -309,7 +309,6 @@ const CarRentals = () => {
 
         {/* CheckBox */}
         <Box className="container  d-none d-lg-flex fs-6 fw-bold">
-            {/* <Checkbox label="hello" defaultChecked /> */}
 
             <FormControlLabel className='fw-bold fs-5' control={<Checkbox />} label="Drop car off at different location" />
             <FormControlLabel control={<Checkbox defaultChecked />} label="Driver aged 30 – 65?" />

@@ -17,7 +17,8 @@ import Skardu from "../../../../assets/images/Skardu.gif"
 import Tokyo from "../../../../assets/images/Tokyo.jpg"
 import adventure from "../../../../assets/images/photography.jpeg"
 import trendingDubai from "/src/assets/images/trendingDubai.png"
-import trendingAbuDhabi from "/src/assets/images/trendingAbuDhabi.png"
+// import trendingAbuDhabi from "/src/assets/images/trendingAbuDhabi.png"
+import trendingAbuDhabi from "../../../../assets/images/trendingAbudhabi.png"
 import trendingSharjah from "/src/assets/images/trendingSharjah.png"
 import trendingIstanbol from "/src/assets/images/trendingIstangbol.png"
 import trendingParis from "/src/assets/images/trendingParis.png"
@@ -271,6 +272,8 @@ const HeroSection = () => {
 
   return <>
 
+  {/* Modal when we refresh the page */}
+
     <Modal open={open} onClose={handleClose}>
       <Box
         sx={{
@@ -323,6 +326,7 @@ const HeroSection = () => {
       </Box>
     </Box>
 
+{/*search input bar */}
 
     <Box className="container">
       <Box
@@ -401,13 +405,15 @@ const HeroSection = () => {
       </Box>
     </Box>
 
-
+{/* chechk Box */}
     <Box className="container d-none d-lg-flex fs-6 fw-0">
       {/* <Checkbox label="hello" defaultChecked /> */}
 
       <FormControlLabel control={<Checkbox />} label="I'm looking for an entire home or apartment" />
     </Box>
     <Box className="container mt-4">
+
+{/* recent search section */}
 
       <Typography className='fw-bold fs-5' >
         Your recent searches
@@ -434,6 +440,7 @@ const HeroSection = () => {
 
 
           </Box>
+          
           <Box className='col-lg-4 col-md-6 col-sm-12 col-xs-12 pt-4'>
             <Link className='text-decoration-none' to="hotels-detail">
 
@@ -526,7 +533,7 @@ const HeroSection = () => {
 
 
 
-
+{/* Trending destinations section */}
     <Box className='container d-none d-lg-block d-md-block mt-5'>
       <Typography className='fw-bold ms-3 fs-4'
       >Trending destinations
@@ -612,7 +619,6 @@ const HeroSection = () => {
 
               <Box
                 style={{
-                  border: '1px solid #ddd',
                   padding: 0,
                   margin: 0,
                   borderRadius: 8,
@@ -647,6 +653,7 @@ const HeroSection = () => {
     </Box>
 
 
+{/* Deals of weeekends section */}
 
     <Box className="container">
       <Typography className="fs-5 fw-bold mt-4">Deals for the weekend</Typography>

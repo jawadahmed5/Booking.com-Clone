@@ -9,7 +9,7 @@ const StaysPage = () => {
 
 <SecondHeader/>
 
-<HeroSection/>/
+<HeroSection/>
 
 
   </>

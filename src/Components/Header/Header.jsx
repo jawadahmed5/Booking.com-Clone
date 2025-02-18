@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import country from "../../assets/images/flag.png"
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-import SecondHeader from './SecondHeader';
 import { Link } from 'react-router';
 import { Box, Tooltip, Typography } from '@mui/material';
 import Modal from '@mui/material/Modal';
@@ -119,14 +118,8 @@ const Header = () => {
 
 
 
-  const style = {
 
-  };
-
-
-
-
-// Language modal
+  // Language modal
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -143,12 +136,15 @@ const Header = () => {
 
 
   return <>
+    {/* Nav bar */}
     <nav class="navbar navbar-expand-lg bg-primary ">
       <div class="container ">
 
+        <Link to="/">
 
-        <a class="navbar-brand fw-semibold fs-5 text-white" href="#">Booking.com</a>
+          <a class="navbar-brand fw-semibold fs-5 text-white" href="#">Booking.com</a>
 
+        </Link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -156,17 +152,17 @@ const Header = () => {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <Tooltip className='bg-transparent border-0 text-white hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  ' title="Select your currency" >
-            <button onClick={currencyHandleOpen}  style={{ fontSize: "16px" }} class="hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  " >PKR</button>
+              <button onClick={currencyHandleOpen} style={{ fontSize: "16px" }} class="hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  " >PKR</button>
             </Tooltip>
-            <Tooltip className='bg-transparent border-0 text-white hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  '  title="Select your language" >
+            <Tooltip className='bg-transparent border-0 text-white hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  ' title="Select your language" >
 
-            <button onClick={handleOpen} style={{ fontSize: "16px" }} class="hoverItems text-start btn border-0 bg-transperant  px-3  fw-medium  " ><img width={22} className='rounded-pill' img-fluid src={country} alt="" /></button>
-           </Tooltip>
+              <button onClick={handleOpen} style={{ fontSize: "16px" }} class="hoverItems text-start btn border-0 bg-transperant  px-3  fw-medium  " ><img width={22} className='rounded-pill' img-fluid src={country} alt="" /></button>
+            </Tooltip>
 
-           <Tooltip className='bg-transparent border-0 text-white hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  ' title="Contact customer service" >
+            <Tooltip className='bg-transparent border-0 text-white hoverItems text-start btn bg-transperant border-0 text-white   fw-medium  ' title="Contact customer service" >
 
-            <button style={{ fontSize: "16px" }} class="hoverItems text-start btn border-0 bg-transperant text-white  px-3   fw-medium " ><HelpOutlineOutlinedIcon /></button>
-</Tooltip>
+              <button style={{ fontSize: "16px" }} class="hoverItems text-start btn border-0 bg-transperant text-white  px-3   fw-medium " ><HelpOutlineOutlinedIcon /></button>
+            </Tooltip>
 
 
 
@@ -190,11 +186,10 @@ const Header = () => {
       </div>
 
 
-      {/* Modal */}
+      {/* Language Modal */}
 
 
       <div>
-        {/* <Button onClick={handleOpen}>Open modal</Button> */}
         <Modal
           open={open}
           onClose={handleClose}
@@ -235,7 +230,7 @@ const Header = () => {
 
                 <div className='col-lg-3 col-md-4 col-sm-12 gy-3 '>
 
-                  <div  className='d-flex  country-box rounded-4 px-2 py-4'>
+                  <div className='d-flex  country-box rounded-4 px-2 py-4'>
                     <div>
                       <img className='rounded-circle w-75 h-100' src={country.flag} alt="" />
 
@@ -274,11 +269,10 @@ const Header = () => {
 
 
 
-{/* CURRENCY MODAL */}
+      {/* CURRENCY MODAL */}
       <div>
-        {/* <Button onClick={currencyHandleOpen}>Open modal</Button> */}
         <Modal
-        open={currencyOpen}
+          open={currencyOpen}
           onClose={currencyHandleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
@@ -299,20 +293,20 @@ const Header = () => {
             <div className='row  '>
 
               <Typography className='fw-bold fs-4'>
-              Select your currency
+                Select your currency
 
 
               </Typography>
 
-              
+
               <Typography className='fs-7'>
-              Where applicable, prices will be converted to—and shown in—the currency you select. The currency you pay in may differ based on your reservation, and a service fee may also apply.
+                Where applicable, prices will be converted to—and shown in—the currency you select. The currency you pay in may differ based on your reservation, and a service fee may also apply.
 
 
               </Typography>
 
               <Typography className='mt-5 fw-bold '>
-              All currencies
+                All currencies
 
 
               </Typography>
@@ -324,13 +318,13 @@ const Header = () => {
 
                 <div className='col-lg-3 col-md-4 col-sm-12 gy-3 '>
 
-                  <div  className='d-flex  country-box rounded-3 py-2 px-1'>
+                  <div className='d-flex  country-box rounded-3 py-2 px-1'>
 
                     <div className='ms-3 '>
                       <Typography className=' fs-6'>
                         {currency.name}
                       </Typography >
-                      <Typography sx={{fontSize:12}} className='fw-lighter pt-1 text-black-50'>
+                      <Typography sx={{ fontSize: 12 }} className='fw-lighter pt-1 text-black-50'>
                         {currency.code}
                       </Typography>
 
@@ -360,55 +354,7 @@ const Header = () => {
 
 
 
-      {/* <div className='container-fluid'>
-        <div className=''>
 
-
-          <div style={{ width: "3000px" }} className=' '>
-
-            <div className=' border border-1 border-black'>
-
-<div className='row'>
-                <div className='col-3'>
-              {languages.map((country) => (
-              
-
-                <div className='d-flex border border-1 border-danger'>
-                  <div>
-                    <img src={country.flag} alt="" />
-
-                  </div>
-
-                  <div>
-                    <Typography>
-                      {country.name}
-                    </Typography>
-
-
-                    <Typography>
-                      {country.code}
-                    </Typography>
-                  </div>
-
-                </div>
-
-                </div>
-                
-                
-                </div>
-
-
-
-
-
-              ))}
-            </div>
-
-
-          </div>
-
-        </div>
-      </div> */}
 
     </nav >
 

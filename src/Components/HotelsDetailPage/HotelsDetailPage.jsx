@@ -1,24 +1,17 @@
-// import React from 'react'
-import Header from '../Header/Header'
 import SecondHeader from '../Header/SecondHeader'
-import { Autocomplete, Box, Breadcrumbs, Button, Card, CardContent, CardMedia, Checkbox, Chip, Container, FormControlLabel, List, ListItem, Typography } from '@mui/material'
+import { Box, Breadcrumbs, Button, Card, CardContent, CardMedia, Checkbox, Chip, Container, FormControlLabel, List, ListItem, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import KingBedOutlinedIcon from '@mui/icons-material/KingBedOutlined';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Person2Icon from '@mui/icons-material/Person2';
-// import * as React from 'react';
 import { useLocalStorageState } from '@toolpad/core/useLocalStorageState';
 import dayjs from 'dayjs';
 import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { AspectRatio, CheckBox, Star } from '@mui/icons-material';
 import { Link } from 'react-router';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HotelDetailPic1 from '../../assets/images/HotelDetailPic-1.webp';
-
 import HotelDetailPic2 from '../../assets/images/HotelDetailPic-2.webp'
 import HotelDetailPic3 from '../../assets/images/HotelDetailPic-3.webp'
 import HotelDetailPic4 from '../../assets/images/HotelDetailPic-4.webp'
@@ -48,49 +41,7 @@ const HotelsDetailPage = () => {
     });
 
 
-    function handleClick(event) {
-        event.preventDefault();
-        console.info('You clicked a breadcrumb.');
-    }
 
-    const breadcrumbs = [
-        <Link to="/" sx={{ fontSize: "8px" }}
-            underline="hover" key="1" color="inherit"  onClick={handleClick}>
-            Stays
-        </Link>,
-        <Link
-to="/"
-            // className='fs-7'
-            underline="hover"
-            key="2"
-            color="inherit"
-            // href="/src/Components/StaysPage/HomePage/HeroSection/HeroSection.jsx"
-            onClick={handleClick}
-        >
-            Home
-        </Link>,
-
-        <Link
-        to="/hotels-detail"
-            sx={{ fontSize: "10px" }}
-
-            // className='fs-7'
-            underline="hover"
-            key="3"
-            color="inherit"
-              href="/src/Components/HotelsDetailPage/HotelsDetailPage.jsx"
-            // to="/Home"
-            onClick={handleClick}
-        >
-            Hotel Details
-
-        </Link>,
-
-        <Typography
-            key="3" sx={{ color: 'text.primary', fontSize: "14px" }}>
-            Result
-        </Typography>,
-    ];
 
 
 
@@ -332,101 +283,103 @@ to="/"
 
 
     return <>
+        {/* Header and serach bar */}
         <Box className='pb-5'>
             <SecondHeader />
 
             <Box className="container">
-      <Box
-        className="row"
-        style={{ gap: "" }}
-      >
-        <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-3 col-md-6 col-sm-12">
-          <KingBedOutlinedIcon />
-          <input width={100}
+                <Box
+                    className="row"
+                    style={{ gap: "" }}
+                >
+                    <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-3 col-md-6 col-sm-12">
+                        <KingBedOutlinedIcon />
+                        <input width={100}
 
-            type="text"
-            placeholder="Dubai"
-            className="form-control  border-0 p-1"
-            style={{ width: "100%", outline: "none", boxShadow: "none" }}
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            onFocus={() => setShowCitySuggestions(true)}
-            onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
-          />
-          {showCitySuggestions && (
-            <Box className="position-absolute bg-white border rounded" style={{ top: "100%", left: 0, width: "100%", zIndex: 10 }}>
-              <Box className="p-2">Dubai</Box>
-              <Box className="p-2">London</Box>
-              <Box className="p-2">New York</Box>
+                            type="text"
+                            placeholder="Dubai"
+                            className="form-control  border-0 p-1"
+                            style={{ width: "100%", outline: "none", boxShadow: "none" }}
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            onFocus={() => setShowCitySuggestions(true)}
+                            onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
+                        />
+                        {showCitySuggestions && (
+                            <Box className="position-absolute bg-white border rounded" style={{ top: "100%", left: 0, width: "100%", zIndex: 10 }}>
+                                <Box className="p-2">Dubai</Box>
+                                <Box className="p-2">London</Box>
+                                <Box className="p-2">New York</Box>
+                            </Box>
+                        )}
+                    </Box>
+
+                    <Box className="translate-middle-y bg-white d-flex align-items-center border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12 d-none d-lg-block d-md-block">
+
+                        <LocalizationProvider variant="small" dateAdapter={AdapterDayjs}>
+                            <Stack sx={{ width: "100%", }} direction="row" spacing={2}>
+                                <DatePicker
+                                    className=''
+                                    sx={{ width: "100%", "& fieldset": { border: "none" } }}
+                                    value={value}
+                                    onChange={(newValue) => setValue(newValue)}
+                                />
+                            </Stack>
+                        </LocalizationProvider>
+                    </Box>
+
+                    <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
+                        <Person2Icon />
+                        <input
+                            type="text"
+                            placeholder="2 adults - 0 children - 1 room"
+                            className="form-control border-0"
+                            style={{ width: "100%", outline: "none", boxShadow: "none" }}
+                            value={guestInfo}
+                            onFocus={() => setShowGuestModal(true)}
+                            onBlur={() => setTimeout(() => setShowGuestModal(false), 200)}
+                        />
+                        {showGuestModal && (
+                            <Box className="position-absolute bg-white border rounded p-3" style={{ top: "100%", left: 0, width: "300px", zIndex: 10 }}>
+                                <Box className="d-flex justify-content-between align-items-center mb-2">
+                                    <span>Adults</span>
+                                    <input type="number" className="form-control w-25" defaultValue={2} />
+                                </Box>
+                                <Box className="d-flex justify-content-between align-items-center mb-2">
+                                    <span>Children</span>
+                                    <input type="number" className="form-control w-25" defaultValue={0} />
+                                </Box>
+                                <Box className="d-flex justify-content-between align-items-center">
+                                    <span>Rooms</span>
+                                    <input type="number" className="form-control w-25" defaultValue={1} />
+                                </Box>
+                            </Box>
+                        )}
+                    </Box>
+
+                    <Link className="btn btn-primary translate-middle-y   border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12" to="/hotels-detail">
+                        <button className="bg-transparent text-white border-0 fw-bold text-center mt-lg-2" >Search</button>
+                    </Link>
+
+                </Box>
             </Box>
-          )}
-        </Box>
-
-        <Box className="translate-middle-y bg-white d-flex align-items-center border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12 d-none d-lg-block d-md-block">
-
-          <LocalizationProvider variant="small" dateAdapter={AdapterDayjs}>
-            <Stack sx={{ width: "100%", }} direction="row" spacing={2}>
-              <DatePicker
-                className=''
-                sx={{ width: "100%", "& fieldset": { border: "none" } }}
-                value={value}
-                onChange={(newValue) => setValue(newValue)}
-              />
-            </Stack>
-          </LocalizationProvider>
-        </Box>
-
-        <Box className="translate-middle-y bg-white d-flex align-items-center position-relative border border-4 rounded-1 border-warning col-lg-4 col-md-6 col-sm-12">
-          <Person2Icon />
-          <input
-            type="text"
-            placeholder="2 adults - 0 children - 1 room"
-            className="form-control border-0"
-            style={{ width: "100%", outline: "none", boxShadow: "none" }}
-            value={guestInfo}
-            onFocus={() => setShowGuestModal(true)}
-            onBlur={() => setTimeout(() => setShowGuestModal(false), 200)}
-          />
-          {showGuestModal && (
-            <Box className="position-absolute bg-white border rounded p-3" style={{ top: "100%", left: 0, width: "300px", zIndex: 10 }}>
-              <Box className="d-flex justify-content-between align-items-center mb-2">
-                <span>Adults</span>
-                <input type="number" className="form-control w-25" defaultValue={2} />
-              </Box>
-              <Box className="d-flex justify-content-between align-items-center mb-2">
-                <span>Children</span>
-                <input type="number" className="form-control w-25" defaultValue={0} />
-              </Box>
-              <Box className="d-flex justify-content-between align-items-center">
-                <span>Rooms</span>
-                <input type="number" className="form-control w-25" defaultValue={1} />
-              </Box>
-            </Box>
-          )}
-        </Box>
-        
-        <Link className="btn btn-primary translate-middle-y   border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12" to="/hotels-detail">
-            <button className="bg-transparent text-white border-0 fw-bold text-center mt-lg-2" >Search</button>
-         </Link>
-        
-      </Box>
-    </Box>
 
 
-
-            <Box className='container'>
+            {/* herarchiey navigationj breadecrumbs */}
+            {/* <Box className='container'>
                 <Stack spacing={2}>
 
                     <Breadcrumbs
                         separator={<NavigateNextIcon fontSize="10" />}
                         aria-label="breadcrumb"
                     >
-                        {breadcrumbs}
+                        {Breadcrumbs}
                     </Breadcrumbs>
                 </Stack>
-            </Box>
+            </Box> */}
 
 
+            {/* Cheack box section */}
             <Box className='container'>
                 <Box className='row'>
                     <Box className='col-lg-3 col-md-3 col-sm-12 d-none d-lg-block d-md-block'>
@@ -925,6 +878,8 @@ to="/"
                             </Box>
                         </Box>
 
+
+                        {/* Products */}
 
                         <Box className='mt-3 '>
                             {hotels.map((hotel, index) => (

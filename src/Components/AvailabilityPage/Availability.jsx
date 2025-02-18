@@ -52,13 +52,13 @@ import hotelpic15 from "../../assets/images/HOTEL-15.jpg"
 const Availability = () => {
 
 
-const [city, setCity] = useState("");
+  const [city, setCity] = useState("");
   const [showCitySuggestions, setShowCitySuggestions] = useState(false);
   const [dateRange, setDateRange] = useState("");
   const [showCalendar, setShowCalendar] = useState(false);
   const [guestInfo, setGuestInfo] = useState("2 adults - 0 children - 1 room");
   const [showGuestModal, setShowGuestModal] = useState(false);
-  
+
   const DAYJS_CODEC = {
     parse: (dateString) => dayjs(dateString),
     stringify: (date) => date.toISOString(),
@@ -68,46 +68,46 @@ const [city, setCity] = useState("");
     codec: DAYJS_CODEC,
   });
 
-    function handleClick(event) {
-        event.preventDefault();
-        console.info('You clicked a breadcrumb.');
-    }
+  function handleClick(event) {
+    event.preventDefault();
+    console.info('You clicked a breadcrumb.');
+  }
 
 
-    const breadcrumbs = [
-        <Link to="/" style={{ fontSize: "14px" }}
-            underline="hover" key="1" color="inherit"  onClick={handleClick}>
-            Stays
-        </Link>,
-        <Link
-        style={{ fontSize: "14px" }}
-            underline="hover"
-            key="2"
-            color="inherit"
-            onClick={handleClick}
-        >
-            Home
-        </Link>,
+  const breadcrumbs = [
+    <Link to="/" style={{ fontSize: "14px" }}
+      underline="hover" key="1" color="inherit" onClick={handleClick}>
+      Stays
+    </Link>,
+    <Link
+      style={{ fontSize: "14px" }}
+      underline="hover"
+      key="2"
+      color="inherit"
+      onClick={handleClick}
+    >
+      Home
+    </Link>,
 
-        <Link
-        to="/hotels-detail"
-        style={{ fontSize: "14px" }}
+    <Link
+      to="/hotels-detail"
+      style={{ fontSize: "14px" }}
 
-            underline="hover"
-            key="3"
-            color="inherit"
-              href="/src/Components/HotelsDetailPage/HotelsDetailPage.jsx"
-            onClick={handleClick}
-        >
-           All Apartments
+      underline="hover"
+      key="3"
+      color="inherit"
+      href="/src/Components/HotelsDetailPage/HotelsDetailPage.jsx"
+      onClick={handleClick}
+    >
+      All Apartments
 
-        </Link>,
+    </Link>,
 
-        <Typography
-            key="3" sx={{ color: 'text.primary', fontSize: "14px" }}>
-Pakistan
-        </Typography>,
-    ];
+    <Typography
+      key="3" sx={{ color: 'text.primary', fontSize: "14px" }}>
+      Pakistan
+    </Typography>,
+  ];
 
 
 
@@ -120,9 +120,9 @@ Pakistan
       rating: 9.5,
       reviews: " 15 reviews",
       locationRating: 9.7,
-      customerreview:"Our stay at Centaurus Elysium Downtown luxury Apartments Facing Centaurus mall Islamabad was nothing short of amazing! Perfectly located with",
-     country:"United Arab Emirates",
-     description: `You might be eligible for a Genius discount at Elysium Downtown Luxury Apartments Facing Centaurus Mall Islamabad. To check if a Genius discount is available for your selected dates sign in.
+      customerreview: "Our stay at Centaurus Elysium Downtown luxury Apartments Facing Centaurus mall Islamabad was nothing short of amazing! Perfectly located with",
+      country: "United Arab Emirates",
+      description: `You might be eligible for a Genius discount at Elysium Downtown Luxury Apartments Facing Centaurus Mall Islamabad. To check if a Genius discount is available for your selected dates sign in.
 
      Genius discounts at this property are subject to book dates, stay dates and other available deals.
    
@@ -137,27 +137,27 @@ Pakistan
      Lake View Park is 12 km from Elysium Downtown Luxury Apartments Facing Centaurus Mall Islamabad, while Ayūb National Park is 19 km from the property. Islamabad International Airport is 31 km away.
    
      Couples particularly like the location — they rated it 9.6 for a two-person trip.`,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic1,
         hotelpic2,
         hotelpic3,
         // hotelpic2,
       ],
-           
+
 
     },
 
@@ -168,9 +168,9 @@ Pakistan
       rating: 9.5,
       reviews: " 16 reviews",
       locationRating: 8.7,
-      customerreview:"“Elysium Mountain Apartments is an excellent place to stay in Islamabad, offering a prime location with easy access to major attractions. One of its",
-     country:"Pakistan",
-     description: `You might be eligible for a Genius discount at Elysium-Mountain luxury Apartments Opposite Centaurus mall Islamabad. To check if a Genius discount is available for your selected dates sign in.
+      customerreview: "“Elysium Mountain Apartments is an excellent place to stay in Islamabad, offering a prime location with easy access to major attractions. One of its",
+      country: "Pakistan",
+      description: `You might be eligible for a Genius discount at Elysium-Mountain luxury Apartments Opposite Centaurus mall Islamabad. To check if a Genius discount is available for your selected dates sign in.
 
 Genius discounts at this property are subject to book dates, stay dates and other available deals.
 
@@ -185,27 +185,27 @@ Guests can stay active with the fitness classes held on site. Bike hire and car 
 Ayūb National Park is 19 km from the accommodation, while Taxila Museum is 36 km from the property. Islamabad International Airport is 31 km away, and the property offers a paid airport shuttle service.
 
 Couples particularly like the location — they rated it 10 for a two-person trip.`,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic4,
         hotelpic5,
         hotelpic6,
         // hotelpic2,
       ],
-           
+
 
     },
     {
@@ -215,9 +215,9 @@ Couples particularly like the location — they rated it 10 for a two-person tri
       rating: 9.85,
       reviews: " 12 reviews",
       locationRating: 9.2,
-      customerreview:"““wonderful stay at sky hieght apartment Apartment Islamabad. The room was exceptionally neat and clean, with fresh bed sheets and towels provided",
-     country:"Pakistan",
-     description: `You might be eligible for a Genius discount at Sky Heights Signature Apartments Facing Centaurus Mall Islamabad. To check if a Genius discount is available for your selected dates sign in.
+      customerreview: "““wonderful stay at sky hieght apartment Apartment Islamabad. The room was exceptionally neat and clean, with fresh bed sheets and towels provided",
+      country: "Pakistan",
+      description: `You might be eligible for a Genius discount at Sky Heights Signature Apartments Facing Centaurus Mall Islamabad. To check if a Genius discount is available for your selected dates sign in.
 
 Genius discounts at this property are subject to book dates, stay dates and other available deals.
 
@@ -232,27 +232,27 @@ For guests with children, Sky Heights Signature Apartments Facing Centaurus Mall
 Lake View Park is 12 km from Sky Heights Signature Apartments Facing Centaurus Mall Islamabad, while Ayūb National Park is 19 km away. Islamabad International Airport is 31 km from the property.
 
 Families particularly like the location — they rated it 9.8 for a stay with kids.`,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic7,
         hotelpic8,
         hotelpic9,
         // hotelpic2,
       ],
-           
+
 
     },
     {
@@ -262,9 +262,9 @@ Families particularly like the location — they rated it 9.8 for a stay with ki
       rating: 8.5,
       reviews: " 19 reviews",
       locationRating: 8.2,
-      customerreview:"“I had a fantastic stay with them—the room was clean and comfortable, and the staff were incredibly welcoming. The location was perfect, and I’d.",
-     country:"England",
-     description: `You might be eligible for a Genius discount at Holiday In Islamabad. To check if a Genius discount is available for your selected dates sign in.
+      customerreview: "“I had a fantastic stay with them—the room was clean and comfortable, and the staff were incredibly welcoming. The location was perfect, and I’d.",
+      country: "England",
+      description: `You might be eligible for a Genius discount at Holiday In Islamabad. To check if a Genius discount is available for your selected dates sign in.
 
 Genius discounts at this property are subject to book dates, stay dates and other available deals.
 
@@ -279,27 +279,27 @@ A car rental service is available at the guest house.
 Lake View Park is 23 km from Holiday In Islamabad, while Ayūb National Park is 26 km away. Islamabad International Airport is 33 km from the property.
 
 Families particularly like the location — they rated it 9.7 for a stay with kids.`,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic10,
         hotelpic11,
         hotelpic12,
         // hotelpic2,
       ],
-           
+
 
     },
     {
@@ -309,9 +309,9 @@ Families particularly like the location — they rated it 9.7 for a stay with ki
       rating: 9.5,
       reviews: " 21 reviews",
       locationRating: 9.3,
-      customerreview:"Best property in Islamabad for family stay.I feel here like home.Sight seen are exceptional infrastructure of mountains Almost 5 minutes away",
-     country:"Pakistan",
-     description: `You might be eligible for a Genius discount at Blue Moon Residency Jinnah Super. To check if a Genius discount is available for your selected dates sign in.
+      customerreview: "Best property in Islamabad for family stay.I feel here like home.Sight seen are exceptional infrastructure of mountains Almost 5 minutes away",
+      country: "Pakistan",
+      description: `You might be eligible for a Genius discount at Blue Moon Residency Jinnah Super. To check if a Genius discount is available for your selected dates sign in.
 
 Genius discounts at this property are subject to book dates, stay dates and other available deals.
 
@@ -326,26 +326,26 @@ Bike hire and car hire are available at Blue Moon Residency Jinnah Super and the
 Shah Faisal Mosque is 4 km from the accommodation, while Lake View Park is 11 km from the property. Islamabad International Airport is 34 km away, and the property offers a paid airport shuttle service.
 
 Families particularly like the location — they rated it 10 for a stay with kids.`,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic13,
         hotelpic14,
         hotelpic15,
       ],
-           
+
 
     },
     {
@@ -355,9 +355,9 @@ Families particularly like the location — they rated it 10 for a stay with kid
       rating: 7.5,
       reviews: " 13 reviews",
       locationRating: 89.3,
-      customerreview:"Our work trip with family turned into a delightful experience at Elysium Sky Views Elite",
-     country:"Dubai",
-     description: `You might be eligible for a Genius discount at Elysium-Sky Views Elite Apartments Facing Centaurus Mall Islamabad. To check if a Genius discount is available for your selected dates sign in.
+      customerreview: "Our work trip with family turned into a delightful experience at Elysium Sky Views Elite",
+      country: "Dubai",
+      description: `You might be eligible for a Genius discount at Elysium-Sky Views Elite Apartments Facing Centaurus Mall Islamabad. To check if a Genius discount is available for your selected dates sign in.
 
 Genius discounts at this property are subject to book dates, stay dates and other available deals.
 
@@ -372,26 +372,26 @@ For guests with children, the apartment offers an indoor play area, outdoor play
 Ayūb National Park is 19 km from the accommodation, while Taxila Museum is 36 km from the property. Islamabad International Airport is 31 km away, and the property offers a paid airport shuttle service.
 
 Families particularly like the location — they rated it 10 for a stay with kids.`,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic1,
         hotelpic9,
         hotelpic5,
       ],
-           
+
 
     },
     {
@@ -401,7 +401,7 @@ Families particularly like the location — they rated it 10 for a stay with kid
       rating: 8.5,
       reviews: " 17 reviews",
       locationRating: 9.3,
-     description: `Offering a terrace and mountain view, Elysium Serviced Apartment is set in Islamabad, 3.8 km from Shah Faisal Mosque and 12 km from Lake View Park. This apartment offers free private parking and a 24-hour front desk. The apartment has family rooms as well as facilities for disabled guests.
+      description: `Offering a terrace and mountain view, Elysium Serviced Apartment is set in Islamabad, 3.8 km from Shah Faisal Mosque and 12 km from Lake View Park. This apartment offers free private parking and a 24-hour front desk. The apartment has family rooms as well as facilities for disabled guests.
 
 Some units come with air conditioning, a flat-screen TV, washing machine and a kettle, as well as a fully equipped kitchen. At the apartment complex, units are fitted with a private bathroom.
 
@@ -412,26 +412,26 @@ A baby safety gate is also available for guests at the apartment.
 Ayūb National Park is 20 km from Elysium Serviced Apartment, while Taxila Museum is 36 km from the property. Islamabad International Airport is 31 km away.
 
 .`,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic8,
         hotelpic3,
         hotelpic12,
       ],
-           
+
 
     },
     {
@@ -441,9 +441,9 @@ Ayūb National Park is 20 km from Elysium Serviced Apartment, while Taxila Museu
       rating: 8.8,
       reviews: " 15 reviews",
       locationRating: 8.7,
-      customerreview:"The location is great, so were the rooms and the services",
-     country:"Turkey",
-     description: `You might be eligible for a Genius discount at Three Trees Hotel. To check if a Genius discount is available for your selected dates sign in.
+      customerreview: "The location is great, so were the rooms and the services",
+      country: "Turkey",
+      description: `You might be eligible for a Genius discount at Three Trees Hotel. To check if a Genius discount is available for your selected dates sign in.
 
 Genius discounts at this property are subject to book dates, stay dates and other available deals.
 
@@ -456,26 +456,26 @@ The daily breakfast offers buffet, continental or Asian options.
 Lake View Park is 10 km from the accommodation, while Ayūb National Park is 19 km from the property. Islamabad International Airport is 31 km away.
 
 Families particularly like the location — they rated it 8.5 for a stay with kids`,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic13,
         hotelpic2,
         hotelpic7,
       ],
-           
+
 
     },
     {
@@ -485,35 +485,35 @@ Families particularly like the location — they rated it 8.5 for a stay with ki
       rating: 9.8,
       reviews: " 25 reviews",
       locationRating: 9.3,
-      customerreview:"The location is great, so were the rooms and the services",
-     country:"Finland",
-     description: `Offering city views, Elysium Luxurious Apartments Opposite Centaurus Mall Islamabad-LMY is an accommodation set in Islamabad, 12 km from Lake View Park and 19 km from Ayūb National Park. The air-conditioned accommodation is 3.5 km from Shah Faisal Mosque, and guests can benefit from on-site private parking and complimentary WiFi. The accommodation offers a lift and full-day security for guests.
+      customerreview: "The location is great, so were the rooms and the services",
+      country: "Finland",
+      description: `Offering city views, Elysium Luxurious Apartments Opposite Centaurus Mall Islamabad-LMY is an accommodation set in Islamabad, 12 km from Lake View Park and 19 km from Ayūb National Park. The air-conditioned accommodation is 3.5 km from Shah Faisal Mosque, and guests can benefit from on-site private parking and complimentary WiFi. The accommodation offers a lift and full-day security for guests.
 
 The spacious apartment is fitted with 2 bedrooms, 2 bathrooms, bed linen, towels, a flat-screen TV with streaming services, a fully equipped kitchen, and a balcony with mountain views. Guests at this apartment can enjoy fruits and chocolates or cookies. The accommodation is soundproof.
 
 Taxila Museum is 36 km from the apartment, while Safa Gold Mall is 2.8 km away. The nearest airport is Islamabad International Airport, 31 km from Elysium Luxurious Apartments Opposite Centaurus Mall Islamabad-LMY.
 
 `,
-     facilities: [
-      "Apartments",
-      "Breakfast",
-      "Restaurant",
-      "Bathroom",
-      "Balcony",
-      "Shuttle ",
-      "View",
-      "Free WiFi",
-      "Pets allowed",
-      "Family rooms",
-    ],
+      facilities: [
+        "Apartments",
+        "Breakfast",
+        "Restaurant",
+        "Bathroom",
+        "Balcony",
+        "Shuttle ",
+        "View",
+        "Free WiFi",
+        "Pets allowed",
+        "Family rooms",
+      ],
 
-     breakfastOptions: ["Continental", "Asian"],
+      breakfastOptions: ["Continental", "Asian"],
       images: [
         hotelpic6,
         hotelpic14,
         hotelpic5,
       ],
-           
+
 
     },
 
@@ -522,32 +522,32 @@ Taxila Museum is 36 km from the apartment, while Safa Gold Mall is 2.8 km away. 
 
 
 
-  
-const {id} = useParams()
-const hotelData = hotelAvailability.find( (rest) => rest.id === parseInt(id)  ) 
 
-console.log(id, "id");
+  const { id } = useParams()
+  const hotelData = hotelAvailability.find((rest) => rest.id === parseInt(id))
 
-
-
-
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
+  console.log(id, "id");
 
 
 
 
-  return<>
-<SecondHeader/>
+  const bull = (
+    <Box
+      component="span"
+      sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+    >
+      •
+    </Box>
+  );
 
 
-<Box className="container d-none d-lg-block d-md-block">
+
+
+  return <>
+    <SecondHeader />
+
+
+    <Box className="container d-none d-lg-block d-md-block">
       <Box
         className="row"
         style={{ gap: "" }}
@@ -616,267 +616,267 @@ const bull = (
             </Box>
           )}
         </Box>
-        
+
         <Link className="btn btn-primary translate-middle-y   border border-4 rounded-1 border-warning col-lg-1 col-md-12 -col-sm-12" to="/hotels-detail">
-            <button className="bg-transparent text-white border-0 fw-bold text-center mt-lg-2" >Search</button>
-         </Link>
-        
+          <button className="bg-transparent text-white border-0 fw-bold text-center mt-lg-2" >Search</button>
+        </Link>
+
       </Box>
     </Box>
 
 
     <Box className='container'>
-                <Stack spacing={2}>
+      <Stack spacing={2}>
 
-                    <Breadcrumbs
-                        separator={<NavigateNextIcon fontSize="10" />}
-                        aria-label="breadcrumb"
-                    >
-                        {breadcrumbs}
-                    </Breadcrumbs>
-                </Stack>
-            </Box>
-
-
-
-
-    <Box sx={{  }}>
-        <Box key={hotelData.id} style={{ marginBottom: "10px",  padding: "10px" }}>
-          
-
-<Box className='container'>
-  <Box className='row'>
-    <Box className='col-lg-8 col-md-8 col-sm-12'>
-    <Box className='d-flex'>
-    <Rating value={hotelData.rating / 2} precision={0.1} readOnly />
-      <Chip label="New to Booking" color="warning" className=' fw-normal rounded-1 px-2' size="small" />
-     <Typography  className='text-white bg-warning ms-2  rounded-2'>
-       <ThumbUpIcon /> 
-     </Typography>
+        <Breadcrumbs
+          separator={<NavigateNextIcon fontSize="10" />}
+          aria-label="breadcrumb"
+        >
+          {breadcrumbs}
+        </Breadcrumbs>
+      </Stack>
     </Box>
 
 
-     <Box className=''>
-      <h2>{hotelData.name}</h2>
-
-    </Box>
-   </Box>
-    
-
-    
 
 
-      <Box className='col-lg-4 col-md-4 col-sm-12 d-none d-lgblock d-md-block'>
-<Box className='d-flex justify-content-around '>
-<Typography className="text-primary fs-5 ">
-    <FavoriteBorderSharpIcon/>
-  </Typography>
-  <Typography  className="text-primary fs-5 ms-2">
-<ShareSharpIcon/>
-  </Typography>
+    <Box sx={{}}>
+      <Box key={hotelData.id} style={{ marginBottom: "10px", padding: "10px" }}>
 
-  <Button variant='contained' className="ms-3">
-  Reserve your apartment stay
 
-  </Button>
-</Box>
-
-<Box>
-  <Typography className="text-end mt-2 ">
-    <span className='text-primary me-2'>
-      <LocalOfferOutlinedIcon/>
-    </span>
-    <Button variant="contained" size="small"   className="text-white rounded-2 fw-semibold"> 
-    We Price Match
-    </Button >
-  </Typography>
-</Box>
-      </Box>
-  
-  </Box>
-</Box>
-   
-    <Box className='container mt-2'>
-    <Typography variant="body2" color="text.secondary">
-              <span className="text-primary"><LocationOnIcon/></span>    {hotelData.location}
-                <a className="text-decoration-none" href="https://maps.app.goo.gl/sTE5z7BgWuChbt2F8">
-                <span className="fw-bold text-primary"> - Excellent location - show map</span>
-
-                </a>
+        <Box className='container'>
+          <Box className='row'>
+            <Box className='col-lg-8 col-md-8 col-sm-12'>
+              <Box className='d-flex'>
+                <Rating value={hotelData.rating / 2} precision={0.1} readOnly />
+                <Chip label="New to Booking" color="warning" className=' fw-normal rounded-1 px-2' size="small" />
+                <Typography className='text-white bg-warning ms-2  rounded-2'>
+                  <ThumbUpIcon />
                 </Typography>
-    </Box>
-          
-          <Box className='container mt-2'>
-            <Box className='row'>
-            <Box className='col-lg-9 col-md-9 col-sm-12'>
-            <Box className='d-flex '>
-            <Box>
-              <img className="img-fluid rounded-3" style={{height:"100%"}} width="560" src={hotelData.images[0]} alt="" />
-            </Box>
-            <Box className='ms-2'>
-              <img className="img-fluid rounded-3" width="275" src={hotelData.images[1]} alt="" />
-              <Box className='mt-2'>
-              <img className="img-fluid rounded-3" width="275" src={hotelData.images[2]} alt="" />
+              </Box>
+
+
+              <Box className=''>
+                <h2>{hotelData.name}</h2>
 
               </Box>
             </Box>
+
+
+
+
+
+            <Box className='col-lg-4 col-md-4 col-sm-12 d-none d-lgblock d-md-block'>
+              <Box className='d-flex justify-content-around '>
+                <Typography className="text-primary fs-5 ">
+                  <FavoriteBorderSharpIcon />
+                </Typography>
+                <Typography className="text-primary fs-5 ms-2">
+                  <ShareSharpIcon />
+                </Typography>
+
+                <Button variant='contained' className="ms-3">
+                  Reserve your apartment stay
+
+                </Button>
+              </Box>
+
+              <Box>
+                <Typography className="text-end mt-2 ">
+                  <span className='text-primary me-2'>
+                    <LocalOfferOutlinedIcon />
+                  </span>
+                  <Button variant="contained" size="small" className="text-white rounded-2 fw-semibold">
+                    We Price Match
+                  </Button >
+                </Typography>
+              </Box>
             </Box>
+
+          </Box>
+        </Box>
+
+        <Box className='container mt-2'>
+          <Typography variant="body2" color="text.secondary">
+            <span className="text-primary"><LocationOnIcon /></span>    {hotelData.location}
+            <a className="text-decoration-none" href="https://maps.app.goo.gl/sTE5z7BgWuChbt2F8">
+              <span className="fw-bold text-primary"> - Excellent location - show map</span>
+
+            </a>
+          </Typography>
+        </Box>
+
+        <Box className='container mt-2'>
+          <Box className='row'>
+            <Box className='col-lg-9 col-md-9 col-sm-12'>
+              <Box className='d-flex '>
+                <Box>
+                  <img className="img-fluid rounded-3" style={{ height: "100%" }} width="560" src={hotelData.images[0]} alt="" />
+                </Box>
+                <Box className='ms-2'>
+                  <img className="img-fluid rounded-3" width="275" src={hotelData.images[1]} alt="" />
+                  <Box className='mt-2'>
+                    <img className="img-fluid rounded-3" width="275" src={hotelData.images[2]} alt="" />
+
+                  </Box>
+                </Box>
+              </Box>
             </Box>
-       <Box className='col-lg-3 col-md-3 col-sm-12'>
-       <Box sx={{ minWidth: 275 }}>
-    <Card>
-    <React.Fragment>
-    <CardContent>
-<Box className='d-flex justify-content-end text-end'>
-  <Box>
-  <Typography className="text-end fs-6 fw-semibold">
-        Superb 
-      </Typography>
-      <Typography sx={{fontSize:"13px"}} color="grey" >
-      {hotelData.reviews}
-      </Typography>
-  </Box>
-  <Box>
-  <Typography className="bg-primary p-1 rounded-bottom-3 rounded-start-3 text-end ms-2 text-white" >{hotelData.rating}</Typography>
+            <Box className='col-lg-3 col-md-3 col-sm-12'>
+              <Box sx={{ minWidth: 275 }}>
+                <Card>
+                  <React.Fragment>
+                    <CardContent>
+                      <Box className='d-flex justify-content-end text-end'>
+                        <Box>
+                          <Typography className="text-end fs-6 fw-semibold">
+                            Superb
+                          </Typography>
+                          <Typography sx={{ fontSize: "13px" }} color="grey" >
+                            {hotelData.reviews}
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <Typography className="bg-primary p-1 rounded-bottom-3 rounded-start-3 text-end ms-2 text-white" >{hotelData.rating}</Typography>
 
-  </Box>
+                        </Box>
 
-</Box>
-<hr/>
-      
-      <Typography variant="body2">
-        <span className="fw-bold">Guest who stayed here</span><br></br>
-       "{hotelData.customerreview}"
-        </Typography>
-        <Typography className="text-end fw-semibold" variant="body2">
-       {hotelData.country}
-        </Typography>
-    </CardContent>
-   <hr></hr><Box className='d-flex justify-content-around pb-2'>
-    
-   <Typography className="fw-semibold mt-1">
-    Excellent Location
-   </Typography>
-   <Typography className="border border-1 p-1 border-black rounded-top-3 rounded-end-3 ">
-   {hotelData.locationRating}
-   </Typography>
-   </Box>
+                      </Box>
+                      <hr />
 
-   <Box>
-    
-                            <Box className="position-relative mt-2 ">
-                                <iframe className='rounded-2' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.824470487258!2d73.10539277479822!3d33.713490635543025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfc0697d15d10d%3A0x1aaf6f84f1af44a4!2sOne%20Constitution%20Avenue!5e0!3m2!1sen!2s!4v1738765511573!5m2!1sen!2s" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                <Button variant='contained' size='small' className='w-75 position-absolute top-50 mt-5 start-50 translate-middle '>Show on the map</Button>
-    
-                            </Box>
-   </Box>
-   
-  </React.Fragment>
+                      <Typography variant="body2">
+                        <span className="fw-bold">Guest who stayed here</span><br></br>
+                        "{hotelData.customerreview}"
+                      </Typography>
+                      <Typography className="text-end fw-semibold" variant="body2">
+                        {hotelData.country}
+                      </Typography>
+                    </CardContent>
+                    <hr></hr><Box className='d-flex justify-content-around pb-2'>
 
-    </Card>
-    </Box>
-       </Box>
+                      <Typography className="fw-semibold mt-1">
+                        Excellent Location
+                      </Typography>
+                      <Typography className="border border-1 p-1 border-black rounded-top-3 rounded-end-3 ">
+                        {hotelData.locationRating}
+                      </Typography>
+                    </Box>
 
+                    <Box>
+
+                      <Box className="position-relative mt-2 ">
+                        <iframe className='rounded-2' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.824470487258!2d73.10539277479822!3d33.713490635543025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfc0697d15d10d%3A0x1aaf6f84f1af44a4!2sOne%20Constitution%20Avenue!5e0!3m2!1sen!2s!4v1738765511573!5m2!1sen!2s" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <Button variant='contained' size='small' className='w-75 position-absolute top-50 mt-5 start-50 translate-middle '>Show on the map</Button>
+
+                      </Box>
+                    </Box>
+
+                  </React.Fragment>
+
+                </Card>
+              </Box>
+            </Box>
+
+          </Box>
+        </Box>
+
+
+
+
+        <Box className='container'>
+          <Box className='row'>
+            <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <HouseIcon />   {hotelData.facilities[0]}
+              </Typography>
+            </Box>
+            <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <FreeBreakfastIcon />  {hotelData.facilities[1]}
+              </Typography>
+            </Box>
+            <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <RestaurantIcon />   {hotelData.facilities[2]}
+              </Typography>
+            </Box>
+            <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <BathtubIcon />  {hotelData.facilities[3]}
+              </Typography>
+            </Box>
+            <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <BalconyIcon />   {hotelData.facilities[4]}
+              </Typography>
+            </Box>
+            <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <AirportShuttleIcon />   {hotelData.facilities[5]}
+              </Typography>
             </Box>
           </Box>
-            
+        </Box>
+
+        <Box className='container'>
+          <Box className='row'>
+            <Box className='col-lg-3 col-md-3 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <RemoveRedEyeIcon />   {hotelData.facilities[6]}
+              </Typography>
+            </Box>
+            <Box className='col-lg-3 col-md-3 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <WifiIcon />   {hotelData.facilities[7]}
+              </Typography>
+            </Box>
+            <Box className='col-lg-3 col-md-3 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <PetsIcon />   {hotelData.facilities[8]}
+              </Typography>
+            </Box>
+            <Box className='col-lg-3 col-md-3 col-sm-12 text-center'>
+              <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
+                <FamilyRestroomIcon />   {hotelData.facilities[9]}
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+
+
+        <Box className='container mt-4'>
+          <Box className='row'>
+            <Box className='col-lg-9 col-md-9 col-sm-12'>
+              <Typography className='text-secondary'>
+                {hotelData.description}
+              </Typography>
+            </Box>
+            <Box className='col-lg-3 col-md-3 col-sm-12 py-5'>
+              <Card className="bg-body-secondary p-3">
+                <Typography className="fw-bold">
+                  Property highlights <br />
+
+                  Breakfast info
+
+
+                </Typography>
+                <Typography>
+                  Continental, Asian
 
 
 
-<Box className='container'>
-  <Box className='row'>
-    <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-     <HouseIcon/>   {hotelData.facilities[0]}
-      </Typography>
-    </Box>
-    <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-      <FreeBreakfastIcon/>  {hotelData.facilities[1]}
-      </Typography>
-    </Box>
-    <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-     <RestaurantIcon/>   {hotelData.facilities[2]}
-      </Typography>
-    </Box>
-    <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-      <BathtubIcon/>  {hotelData.facilities[3]}
-      </Typography>
-    </Box>
-    <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-     <BalconyIcon/>   {hotelData.facilities[4]}
-      </Typography>
-    </Box>
-    <Box className='col-lg-2 col-md-2 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-     <AirportShuttleIcon/>   {hotelData.facilities[5]}
-      </Typography>
-    </Box>
-  </Box>
-</Box>
+                </Typography>
+                <Button className="mt-4" fullWidth variant="contained" size="small">Reserve</Button>
+              </Card>
+            </Box>
+          </Box>
+        </Box>
 
-<Box className='container'>
-  <Box className='row'>
-  <Box className='col-lg-3 col-md-3 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-     <RemoveRedEyeIcon/>   {hotelData.facilities[6]}
-      </Typography>
-    </Box>
-    <Box className='col-lg-3 col-md-3 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-     <WifiIcon/>   {hotelData.facilities[7]}
-      </Typography>
-    </Box>
-    <Box className='col-lg-3 col-md-3 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-     <PetsIcon/>   {hotelData.facilities[8]}
-      </Typography>
-    </Box>
-    <Box className='col-lg-3 col-md-3 col-sm-12 text-center'>
-      <Typography className="border border-1 border-secondary-subtle rounded-3 mt-3 px-3 py-2">
-     <FamilyRestroomIcon/>   {hotelData.facilities[9]}
-      </Typography>
-    </Box>
-  </Box>
-</Box>
-
-
-<Box className='container mt-4'>
-<Box className='row'>
-<Box className='col-lg-9 col-md-9 col-sm-12'>
-<Typography className='text-secondary'>
-    {hotelData.description}
-  </Typography>
-</Box>
-<Box  className='col-lg-3 col-md-3 col-sm-12 py-5'>
-  <Card className="bg-body-secondary p-3">
-<Typography className="fw-bold">
-Property highlights <br/>
-
-Breakfast info
-
-
-</Typography>
-<Typography>
-Continental, Asian
-
-
-
-</Typography>
-<Button className="mt-4" fullWidth variant="contained" size="small">Reserve</Button>
-  </Card>
-</Box>
-</Box>
-</Box>
-      
       </Box>
 
-  </Box>
+    </Box>
 
-    </>
+  </>
 
 };
 
